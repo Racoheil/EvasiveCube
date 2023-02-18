@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellControl: {fileID: 3968803446160623924, guid: ad92f179c2d89824fbdf0abafd8f0135, type: 3}
-  isDestroyCell: 0
+  isDestroyCell: 1
 --- !u!54 &3981712264735202075
 Rigidbody:
   m_ObjectHideFlags: 0

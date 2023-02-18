@@ -206,3 +206,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durability: 2
   brokenCell: {fileID: 2100000, guid: 3e85272e3fee08141b9d410b8f1d10d6, type: 2}
+  solid: 5
