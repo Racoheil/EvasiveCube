@@ -5,8 +5,10 @@ using UnityEngine;
 using System;
 public class BombsGenerate : MonoBehaviour
 {
-   public static BombsGenerate instance;
-    [SerializeField] GameObject bomb;
+    
+    public float  currentDrag ;
+public static BombsGenerate instance;
+    [SerializeField] BombControl bomb;
    //[SerializeField]GameObject[] cells2;
     [SerializeField] GameObject[] cells;
     //[SerializeField] List<GameObject> cells2 = new List<GameObject>();
@@ -15,11 +17,12 @@ public class BombsGenerate : MonoBehaviour
     [SerializeField] static int height = 10;
     public bool isGenerateBombs;
     [SerializeField] float spawnWait=0.5f;
-  // [SerializeField] bool isSpawnBombs;
+    // [SerializeField] bool isSpawnBombs;
     // Random randomNumber = new Random();
-
-     [SerializeField] public List<Vector3> cellsPositions;
+   
+    [SerializeField] public List<Vector3> cellsPositions;
     [SerializeField] bool isChange;
+
     void Update()
     {
         
@@ -38,6 +41,7 @@ public class BombsGenerate : MonoBehaviour
         
     }
     void Awake() {
+        currentDrag = 10;
         instance = this;
         fillList();
         
@@ -45,8 +49,7 @@ public class BombsGenerate : MonoBehaviour
     void Start()
     {
         
-        
-    
+
 
 
         if (isGenerateBombs)
@@ -123,8 +126,12 @@ public class BombsGenerate : MonoBehaviour
                 StopCoroutine(spawnBombCoroutine3());
             }
             bombPos = cellsPositions[UnityEngine.Random.Range(0, cellsPositions.Count)];
+
             bombPos.y = height;
+
+            bomb.rb.drag = currentDrag;
             Instantiate(bomb, bombPos, Quaternion.identity);
+            //Instantiate(bomb(currentDrag =4))
            // i++;
             yield return new WaitForSeconds(spawnWait);
 

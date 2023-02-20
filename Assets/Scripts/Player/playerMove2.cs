@@ -19,7 +19,8 @@ public class playerMove2 : MonoBehaviour
     }
     private void Start()
     {
-        speeds= new int[6]{ 5, 15, 25, 35, 45,50 };
+       
+        speeds = new int[6]{ 5, 15, 25, 35, 45,50 };
         targetPosition = transform.position + new Vector3(0, 0, 1.3f);
         rb = GetComponent<Rigidbody>();
     }

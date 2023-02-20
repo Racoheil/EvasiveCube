@@ -9,12 +9,14 @@ public class ChangeMode : MonoBehaviour
     public static ChangeMode instance;
     [SerializeField] bool isChange=true;
     
-    [SerializeField] int mode=0;
-    [SerializeField] int maxMode = 4;
-    [SerializeField]  float waitFor = 0.1f;
+    [SerializeField] public int mode=0;
+    [SerializeField] int maxMode = 5;
+    public float[] drags;
    
-    void Start()
+
+void Start()
     {
+        drags = new float[6] { 10, 8, 6, 4, 0, 0 };
         instance = this;
     if(isChange)StartCoroutine("changeModeCoroutine");
 
@@ -33,9 +35,11 @@ public class ChangeMode : MonoBehaviour
 
         //playerMove.instance.jumpForce = jumpForces[mode];
         playerMove2.instance.speed = playerMove2.instance.speeds[mode];
+         //BombControl.instance.rb.drag = drags[mode];
+        BombsGenerate.instance.currentDrag = drags[mode];
         
         //Physics.gravity = new Vector3(0, gravitations[mode], 0);
-       Debug.Log("Mode changed on " + mode);
+        Debug.Log("Mode changed on " + mode);
     }
     IEnumerator changeModeCoroutine()
     {

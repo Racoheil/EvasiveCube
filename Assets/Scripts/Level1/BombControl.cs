@@ -7,13 +7,22 @@ public class BombControl : MonoBehaviour
     //[SerializeField] private float speed=0.1f;
     [SerializeField] CellControl cellControl;
     [SerializeField]static int damage = 1;
-   // [SerializeField] BombsGenerate bombsGenerate;
+    // [SerializeField] BombsGenerate bombsGenerate;
+   // public static BombControl instance;
+    
+    
 
-    Rigidbody rb;
+public Rigidbody rb;
    public bool isDestroyCell=true;
+    private void Awake()
+    {
+      // instance = this;
+    }
     void Start()
     {
+        
        rb = GetComponent<Rigidbody>();
+       
     }
     void Update()
     {
