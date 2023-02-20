@@ -6,7 +6,7 @@ public class groundCheckRaycast : MonoBehaviour
 {
     public bool grounded = false;
     public float groundedCheckDistance = 1f;
-    private float bufferCheckDistance = 0.1f;
+  //  private float bufferCheckDistance = 0.1f;
     public static groundCheckRaycast instance;
 
     void Awake()

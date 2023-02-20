@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class LossZone : MonoBehaviour
 {
-    //private void OnTriggerEnter(Collider collider)
-    //{
+    private void OnTriggerEnter(Collider collider)
+    {
 
-    //    if(collider.gameObject.tag=="Player")
-    //    {
-    //        Debug.Log("GameOver");
-    //        LoseWinManager.instance.playerLose();
-    //        //cellControl.hitCell();
-
-
-    //    }
+        if (collider.gameObject.tag == "Player")
+        {
+            Debug.Log("GameOver");
+            LoseWinManager.instance.playerLose();
+            //cellControl.hitCell();
 
 
-    //}
+        }
+
+
+    }
 }

@@ -10,8 +10,16 @@ public class playerMove2 : MonoBehaviour
     public float speed = 10.0f;
     private bool isDone = true;
     Rigidbody rb;
+    public static playerMove2 instance;
+    public int[] speeds;
+    public bool isMove = true;
+    void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
+        speeds= new int[6]{ 5, 15, 25, 35, 45,50 };
         targetPosition = transform.position + new Vector3(0, 0, 1.3f);
         rb = GetComponent<Rigidbody>();
     }
@@ -67,21 +75,23 @@ public class playerMove2 : MonoBehaviour
     }
     IEnumerator playerMove()
     {
-        isDone = false;
-
-        
-       
-
-        while (transform.position != targetPosition)
+        if (isMove)
         {
+            isDone = false;
 
-            var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
-            
-            yield return new WaitForSeconds(0.001f);
+
+
+
+            while (transform.position != targetPosition)
+            {
+
+                var step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+
+                yield return new WaitForSeconds(0.001f);
+            }
+            isDone = true;
         }
-        isDone = true;
-        
 
     }
 }

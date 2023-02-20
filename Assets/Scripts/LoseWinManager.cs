@@ -17,8 +17,8 @@ public class LoseWinManager : MonoBehaviour
     public void playerLose()
     {
         playerMove.instance.isMove = false;
-        ChangeMode.instance.StopCoroutine();
-        ChangeMode.instance.changeMode(0);
+        ChangeMode.instance.StopAllCoroutines();
+       // ChangeMode.instance.changeMode(0);
         Timer.instance.StopTimer();
         timer.SetActive(false);
         loseObjects.SetActive(true);
@@ -27,9 +27,9 @@ public class LoseWinManager : MonoBehaviour
     }
     public void playerWin()
     {
-        playerMove.instance.isMove = false;
-        ChangeMode.instance.StopCoroutine();
-        ChangeMode.instance.changeMode(0);
+        playerMove2.instance.isMove = false;
+        ChangeMode.instance.StopAllCoroutines();
+       // ChangeMode.instance.changeMode(0);
         Timer.instance.StopTimer();
         timer.SetActive(false);
         winObjects.SetActive(true);

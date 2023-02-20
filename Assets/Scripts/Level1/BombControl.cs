@@ -8,6 +8,7 @@ public class BombControl : MonoBehaviour
     [SerializeField] CellControl cellControl;
     [SerializeField]static int damage = 1;
    // [SerializeField] BombsGenerate bombsGenerate;
+
     Rigidbody rb;
    public bool isDestroyCell=true;
     void Start()
