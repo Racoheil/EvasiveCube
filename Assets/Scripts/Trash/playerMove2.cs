@@ -9,9 +9,11 @@ public class playerMove2 : MonoBehaviour
     public float step=0.01f;
     public float speed = 10.0f;
     private bool isDone = true;
+    Rigidbody rb;
     private void Start()
     {
         targetPosition = transform.position + new Vector3(0, 0, 1.3f);
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -48,10 +50,20 @@ public class playerMove2 : MonoBehaviour
             StartCoroutine("playerMove");
 
         }
+        if (groundCheckRaycast.instance.grounded == false)
+        {
+            playerFall();
+            Debug.Log("Падай сука!");
+        }
 
 
 
-
+    }
+    void playerFall()
+    {
+        StopAllCoroutines();
+        rb.useGravity = true;
+        rb.freezeRotation = false;
     }
     IEnumerator playerMove()
     {
@@ -69,5 +81,7 @@ public class playerMove2 : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
         }
         isDone = true;
+        
+
     }
 }

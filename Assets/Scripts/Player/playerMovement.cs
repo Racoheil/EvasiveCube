@@ -55,7 +55,7 @@ public class playerMovement : MonoBehaviour
         //float percentageComplete = elapsedTime / desiredDuration;
         //transform.position = Vector3.Lerp(startPosition, endPosition, percentageComplete);
     }
-    
+   
     IEnumerator playerMove()
     {
         isDone = false;
