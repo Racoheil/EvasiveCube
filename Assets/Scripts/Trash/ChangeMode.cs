@@ -12,11 +12,14 @@ public class ChangeMode : MonoBehaviour
     [SerializeField] public int mode=0;
     [SerializeField] int maxMode = 5;
     public float[] drags;
-   
+    public float[] waitTimes;
+    public bool isFirstLevel = true;
+    public bool isSecondLevel = false;
 
-void Start()
+    void Start()
     {
         drags = new float[6] { 10, 8, 6, 4, 0, 0 };
+        waitTimes = new float[6] { 1f, 0.98f, 0.96f, 0.94f, 92f, 90f };
         instance = this;
     if(isChange)StartCoroutine("changeModeCoroutine");
 
@@ -35,11 +38,12 @@ void Start()
 
         //playerMove.instance.jumpForce = jumpForces[mode];
         playerMove2.instance.speed = playerMove2.instance.speeds[mode];
-         //BombControl.instance.rb.drag = drags[mode];
-        BombsGenerate.instance.currentDrag = drags[mode];
-        
-        //Physics.gravity = new Vector3(0, gravitations[mode], 0);
-        Debug.Log("Mode changed on " + mode);
+        //BombControl.instance.rb.drag = drags[mode];
+        if (isFirstLevel) { BombsGenerate.instance.currentDrag = drags[mode]; }
+        else if (isSecondLevel) { CellsHeat.instance.waitTime = waitTimes[mode]; }
+
+            //Physics.gravity = new Vector3(0, gravitations[mode], 0);
+            Debug.Log("Mode changed on " + mode);
     }
     IEnumerator changeModeCoroutine()
     {

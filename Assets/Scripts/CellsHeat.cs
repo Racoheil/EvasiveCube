@@ -6,15 +6,19 @@ public class CellsHeat : MonoBehaviour
 {
     [SerializeField] GameObject[] heatingCells;
     [SerializeField] HeatCellControl[] heatCellControl;
-    [SerializeField]bool isHeat;
+    [SerializeField]public bool isHeat;
     GameObject[] heatCells;
     public float waitTime=1;
+    public static CellsHeat instance;
     void Start()
     {
       //  Debug.Log("Start!");
         StartCoroutine(HeatCells());
     }
-    
+    private void Awake()
+    {
+        instance = this;
+    }
     public IEnumerator HeatCells()
     {
         while (isHeat==true)

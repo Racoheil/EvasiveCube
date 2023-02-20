@@ -6,7 +6,7 @@ public class HeatCellControl : MonoBehaviour
 {
     [SerializeField] Material heat1, heat2, heat3;
     MeshRenderer meshRenderer;
-    public float WaitForSeconds=2;
+    public float WaitForSeconds=100;
     [SerializeField] int state;
     void Start()
     {
@@ -32,31 +32,34 @@ public class HeatCellControl : MonoBehaviour
         HealthSystem.instance.TakeDamage(damage);
         yield return new WaitForSeconds(WaitForSeconds);
     }
+ 
     public void HeatCell()
     {
        // Debug.Log("Heat this cell!!");
         StartCoroutine(HeatCellCoroutine());
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerStay(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Fuck Hot!");
+
             switch (state)
             {
                 case 0: break;
                 case 1:
-                   // HealthSystem.instance.TakeDamage(1);
-                    StartCoroutine(waitForSeconds(1));
-                break;
+                    HealthSystem.instance.TakeDamage(1);
+                    //StartCoroutine(waitForSeconds(1));
+
+                    break;
                 case 2:
-                   // HealthSystem.instance.TakeDamage(2);
-                    StartCoroutine(waitForSeconds(2));
+                    HealthSystem.instance.TakeDamage(2);
+                    // StartCoroutine(waitForSeconds(2));
                     break;
                 case 3:
-                    //HealthSystem.instance.TakeDamage(5);
-                    StartCoroutine(waitForSeconds(4));
+                    HealthSystem.instance.TakeDamage(10);
+                    //  StartCoroutine(waitForSeconds(4));
                     break;
 
             }

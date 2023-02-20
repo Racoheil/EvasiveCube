@@ -13,17 +13,18 @@ public class LoseWinManager : MonoBehaviour
     {
         instance = this;
     }
-    
+
     public void playerLose()
     {
         playerMove.instance.isMove = false;
         ChangeMode.instance.StopAllCoroutines();
-       // ChangeMode.instance.changeMode(0);
+        // ChangeMode.instance.changeMode(0);
         Timer.instance.StopTimer();
         timer.SetActive(false);
         loseObjects.SetActive(true);
-        BombsGenerate.instance.isGenerateBombs = false;
-        playerMove.instance.isCorrect = false;
+        if (ChangeMode.instance.isFirstLevel){ BombsGenerate.instance.isGenerateBombs = false; }
+        if (ChangeMode.instance.isSecondLevel) { CellsHeat.instance.isHeat = false; }
+        //playerMove.instance.isCorrect = false;
     }
     public void playerWin()
     {
@@ -33,8 +34,10 @@ public class LoseWinManager : MonoBehaviour
         Timer.instance.StopTimer();
         timer.SetActive(false);
         winObjects.SetActive(true);
-        BombsGenerate.instance.isGenerateBombs = false;
-        playerMove.instance.isCorrect = false;
+       
+        if (ChangeMode.instance.isFirstLevel) { BombsGenerate.instance.isGenerateBombs = false; }
+        if (ChangeMode.instance.isSecondLevel) { CellsHeat.instance.isHeat = false; }
+        //playerMove.instance.isCorrect = false;
     }
     public void restartLevel()
     {
