@@ -8,6 +8,7 @@ public class playerMove2 : MonoBehaviour
     //public float interpTime;
     public float step=0.01f;
     public float speed = 10.0f;
+    private bool isDone = true;
     private void Start()
     {
         targetPosition = transform.position + new Vector3(0, 0, 1.3f);
@@ -16,14 +17,14 @@ public class playerMove2 : MonoBehaviour
     {
 
 
-        if (/*isDone && */Input.GetKeyDown(KeyCode.RightArrow))
+        if (isDone && Input.GetKeyDown(KeyCode.RightArrow))
         {
 
 
             targetPosition = transform.position + new Vector3(1.3f, 0, 0);
             StartCoroutine("playerMove");
         }
-        if (/*isDone &&  */Input.GetKeyDown(KeyCode.LeftArrow))
+        if (isDone && Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
 
@@ -31,7 +32,7 @@ public class playerMove2 : MonoBehaviour
             StartCoroutine("playerMove");
 
         }
-        if (/*isDone && */Input.GetKeyDown(KeyCode.UpArrow))
+        if (isDone && Input.GetKeyDown(KeyCode.UpArrow))
         {
 
 
@@ -39,7 +40,7 @@ public class playerMove2 : MonoBehaviour
             StartCoroutine("playerMove");
 
         }
-        if (/*isDone &&*/ Input.GetKeyDown(KeyCode.DownArrow))
+        if (isDone && Input.GetKeyDown(KeyCode.DownArrow))
         {
             
 
@@ -54,15 +55,19 @@ public class playerMove2 : MonoBehaviour
     }
     IEnumerator playerMove()
     {
+        isDone = false;
+
+        
        
 
         while (transform.position != targetPosition)
         {
+
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
             
             yield return new WaitForSeconds(0.001f);
         }
-        
+        isDone = true;
     }
 }
