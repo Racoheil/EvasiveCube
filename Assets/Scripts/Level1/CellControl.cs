@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CellControl : MonoBehaviour
 {
-    [SerializeField]int durability=2;
-    [SerializeField] Material brokenCell;
+    [SerializeField]int durability=4;
+    [SerializeField] Material brokenCell,brokenCell2;
     MeshRenderer meshRenderer;
-    [SerializeField] int solid=5;
+    
    // int hp;
     void Start()
     {
@@ -15,17 +15,22 @@ public class CellControl : MonoBehaviour
          meshRenderer = GetComponent<MeshRenderer>();
     }
     public void hitCell( ){
-        if (durability<solid) {
+        if (durability<0) {
            
          Destroy(gameObject); 
            // Debug.Log("Cell is destroyed");
             BombsGenerate.instance.RemoveCell(this.gameObject.transform.position);
         }
-        else
+        else if(durability!=0)
         {
            
             durability--;
             meshRenderer.material = brokenCell;
+        }
+        else if (durability < 1)
+        {
+            durability--;
+            meshRenderer.material = brokenCell2;
         }
      }
     private void OnCollisionEnter(Collision collision)

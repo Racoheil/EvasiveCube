@@ -6,15 +6,16 @@ public class playerMovement : MonoBehaviour
 {
     [SerializeField] private Vector3 endPosition = new Vector3(5, -2, 0);
     private Vector3 startPosition;
-    [SerializeField] private float desiredDuration = 3f;
+    [SerializeField] private float desiredDuration = 0.2f;
     private float elapsedTime;
     private bool isDone = true;
+    
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -47,13 +48,14 @@ public class playerMovement : MonoBehaviour
 
             endPosition = transform.position + new Vector3(0, 0, -1.3f);
             StartCoroutine("playerMove");
-           
+            
         }
        
         //elapsedTime += Time.deltaTime;
         //float percentageComplete = elapsedTime / desiredDuration;
         //transform.position = Vector3.Lerp(startPosition, endPosition, percentageComplete);
     }
+    
     IEnumerator playerMove()
     {
         isDone = false;
@@ -66,5 +68,6 @@ public class playerMovement : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         isDone = true;
+       // groundCheck();
     }
 }
