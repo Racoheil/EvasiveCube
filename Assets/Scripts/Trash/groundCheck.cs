@@ -21,18 +21,18 @@ public class groundCheck : MonoBehaviour
     //    }
         
     //}
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (/*collider.gameObject.tag == "Cell" &&*/ collider.gameObject.tag == "LossZone")
-        {
-            Debug.Log("Баста");
-            playerMove.instance.IsGrounded = false;
-            // cellPosition = collider.transform.position;
-            //  if (playerMove.instance.isCorrect) { playerMove.instance.positionCorrect(cellPosition); }
+    //private void OnTriggerEnter(Collider collider)
+    //{
+    //    if (/*collider.gameObject.tag == "Cell" &&*/ collider.gameObject.tag == "LossZone")
+    //    {
+    //        Debug.Log("Баста");
+    //        playerMove.instance.IsGrounded = false;
+    //        // cellPosition = collider.transform.position;
+    //        //  if (playerMove.instance.isCorrect) { playerMove.instance.positionCorrect(cellPosition); }
 
-            // Debug.Log("Correct position, broh");
-        }
-    }
+    //        // Debug.Log("Correct position, broh");
+    //    }
+    //}
     //private void OnTriggerExit(Collider collider)
     //{
     //    if(collider.gameObject.tag == "Cell")

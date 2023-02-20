@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    [SerializeField] private Vector3 endPosition = new Vector3(5, -2, 0);
+    [SerializeField] private Vector3 endPosition;
     private Vector3 startPosition;
     [SerializeField] private float desiredDuration = 0.2f;
     private float elapsedTime;
@@ -19,14 +19,14 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDone && Input.GetKeyDown(KeyCode.RightArrow))
+        if (/*isDone && */Input.GetKeyDown(KeyCode.RightArrow))
         {
             elapsedTime = 0;
 
             endPosition = transform.position + new Vector3(1.3f, 0, 0);
             StartCoroutine("playerMove");
         }
-        if (isDone &&  Input.GetKeyDown(KeyCode.LeftArrow))
+        if (/*isDone &&  */Input.GetKeyDown(KeyCode.LeftArrow))
         {
             elapsedTime = 0;
 
@@ -34,7 +34,7 @@ public class playerMovement : MonoBehaviour
             StartCoroutine("playerMove");
            
         }
-        if (isDone && Input.GetKeyDown(KeyCode.UpArrow))
+        if (/*isDone && */Input.GetKeyDown(KeyCode.UpArrow))
         {
             elapsedTime = 0;
 
@@ -42,7 +42,7 @@ public class playerMovement : MonoBehaviour
             StartCoroutine("playerMove");
            
         }
-        if (isDone && Input.GetKeyDown(KeyCode.DownArrow))
+        if (/*isDone &&*/ Input.GetKeyDown(KeyCode.DownArrow))
         {
             elapsedTime = 0;
 
@@ -65,7 +65,7 @@ public class playerMovement : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / desiredDuration;
             transform.position = Vector3.Lerp(transform.position, endPosition, percentageComplete);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
         isDone = true;
        // groundCheck();
