@@ -62,7 +62,7 @@ public class playerMove2 : MonoBehaviour
         if (groundCheckRaycast.instance.grounded == false)
         {
             playerFall();
-            Debug.Log("Падай сука!");
+            Debug.Log("Падай!");
         }
 
 

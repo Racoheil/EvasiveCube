@@ -8,7 +8,14 @@ public class ButtonsControll : MonoBehaviour
 {
     public int selectedLevel=1;
     public Text NumberOflevel;
-   public void Play()
+    public static bool isUnBlocked = false;
+    public static ButtonsControll instance;
+    //public void unBlocked() { isUnBlocked = true; }
+    private void Awake()
+    {
+        instance = this;
+    }
+    public void Play()
     {
         Debug.Log("PLAY");
         if (selectedLevel == 1) SceneManager.LoadScene("Level1");
@@ -31,8 +38,13 @@ public class ButtonsControll : MonoBehaviour
     public void Next()
     {
         Debug.Log("NExt");
-        NumberOflevel.text = "2";
-        selectedLevel = 2;
+        if (playerInfromation.isUnblocked!=true) { Debug.Log("BLOCKED"); }
+        else if (playerInfromation.isUnblocked == true)
+        {
+            NumberOflevel.text = "2";
+            selectedLevel = 2;
+        }
+     
     }
     public void Back()
     {
