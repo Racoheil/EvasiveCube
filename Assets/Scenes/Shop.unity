@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252330b4c1a6ee04db433391e9b7495f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balance: {fileID: 1089613948}
   skin1: {fileID: 1577513684}
   skin2: {fileID: 760539522}
   skin3: {fileID: 608421238}

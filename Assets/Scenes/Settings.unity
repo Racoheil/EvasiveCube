@@ -395,7 +395,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1825130479}
         m_TargetAssemblyTypeName: ButtonsControll, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: NoSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -593,7 +593,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1825130479}
         m_TargetAssemblyTypeName: ButtonsControll, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -940,7 +940,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1825130479}
         m_TargetAssemblyTypeName: ButtonsControll, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: adOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1192,8 +1192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3467c255feb244883dcb0335c194c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   selectedLevel: 1
   NumberOflevel: {fileID: 0}
+  isSound: 0
 --- !u!4 &1825130480
 Transform:
   m_ObjectHideFlags: 0

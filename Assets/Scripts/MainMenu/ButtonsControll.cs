@@ -6,11 +6,24 @@ using UnityEngine.UI;
 
 public class ButtonsControll : MonoBehaviour
 {
+    public GameObject panel;
     public int selectedLevel=1;
     public Text NumberOflevel;
     public static bool isUnBlocked = false;
     public static ButtonsControll instance;
+    public bool isSound;
     //public void unBlocked() { isUnBlocked = true; }
+    private void Start()
+    {
+        if (playerInfromation.isAd == false)
+        {
+            panel.SetActive(false);
+        }
+    }
+    public void adOff()
+    {
+        playerInfromation.isAd = false;
+    }
     private void Awake()
     {
         instance = this;
@@ -54,7 +67,16 @@ public class ButtonsControll : MonoBehaviour
     }
     public void NoSound()
     {
-        Debug.Log("Sound off");
+        if (isSound)
+        {
+            Debug.Log("Sound off");
+            isSound = false;
+        }
+        else
+        {
+            Debug.Log("Sound on");
+            isSound = true;
+        }
     }
     public void NoAds()
     {
@@ -63,6 +85,7 @@ public class ButtonsControll : MonoBehaviour
     public void Exit()
     {
         Debug.Log("Exit");
+        Application.Quit();
     }
     public void BackToMenu()
     {
