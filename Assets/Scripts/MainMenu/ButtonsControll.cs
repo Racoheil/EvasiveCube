@@ -22,7 +22,9 @@ public class ButtonsControll : MonoBehaviour
     }
     public void adOff()
     {
+        
         playerInfromation.isAd = false;
+        Debug.Log("Ads off");
     }
     private void Awake()
     {
@@ -78,10 +80,7 @@ public class ButtonsControll : MonoBehaviour
             isSound = true;
         }
     }
-    public void NoAds()
-    {
-        Debug.Log("No Ads");
-    }
+  
     public void Exit()
     {
         Debug.Log("Exit");
