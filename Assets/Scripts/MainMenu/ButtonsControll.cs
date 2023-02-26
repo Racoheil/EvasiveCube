@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,10 +9,11 @@ public class ButtonsControll : MonoBehaviour
 {
     public GameObject panel;
     public int selectedLevel=1;
-    public Text NumberOflevel;
+    
     public static bool isUnBlocked = false;
     public static ButtonsControll instance;
     public bool isSound;
+    public TMP_Text NumberOfLevel;
     //public void unBlocked() { isUnBlocked = true; }
     private void Start()
     {
@@ -52,19 +54,20 @@ public class ButtonsControll : MonoBehaviour
     }
     public void Next()
     {
-        Debug.Log("NExt");
-        if (playerInfromation.isUnblocked!=true) { Debug.Log("BLOCKED"); }
-        else if (playerInfromation.isUnblocked == true)
-        {
-            NumberOflevel.text = "2";
+        //Debug.Log("NExt");
+        //if (playerInfromation.isUnblocked!=true) { Debug.Log("BLOCKED"); }
+        //else if (playerInfromation.isUnblocked == true)
+        //{
+            NumberOfLevel.text = "2";
             selectedLevel = 2;
-        }
+        //}
      
     }
     public void Back()
     {
         Debug.Log("Back");
-        NumberOflevel.text = "1";
+        NumberOfLevel.text = "1";
+       
         selectedLevel = 1;
     }
     public void NoSound()
