@@ -10,6 +10,7 @@ public class SwipeManager : MonoBehaviour
     public delegate void onSwipeHandler(int direction);
 
     [SerializeField]playerMove playerMoveScript;
+    //[SerializeField]playerMove2 playerMoveScript2;
     public event onSwipeHandler onSwipeEvent;
 
     public enum Direction { Right,Left,Up, Down};

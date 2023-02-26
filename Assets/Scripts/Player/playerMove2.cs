@@ -23,42 +23,76 @@ public class playerMove2 : MonoBehaviour
         speeds = new int[6]{ 5, 15, 25, 35, 45,50 };
         targetPosition = transform.position + new Vector3(0, 0, 1.3f);
         rb = GetComponent<Rigidbody>();
+        SwipeManager.instance.onSwipeEvent += Move;
+
+
+    }
+    public void Move(int direct)
+    {
+        if (isDone && isMove)
+        {
+            switch (direct)
+            {
+                case 0:
+                    targetPosition = transform.position + new Vector3(1.3f, 0, 0);
+                    StartCoroutine("playerMove");
+                    break;
+                case 1:
+                    targetPosition = transform.position + new Vector3(-1.3f, 0, 0);
+                    StartCoroutine("playerMove");
+                    break;
+                case 2:
+                    targetPosition = transform.position + new Vector3(0, 0, 1.3f);
+                    StartCoroutine("playerMove");
+                    break;
+                case 3:
+                    targetPosition = transform.position + new Vector3(0, 0, -1.3f);
+                    StartCoroutine("playerMove");
+                    break;
+                case 4:
+                    
+                    break;
+
+            }
+        }
+
+        //isGrounded = false;
     }
     void Update()
     {
 
 
-        if (isDone && Input.GetKeyDown(KeyCode.RightArrow))
-        {
+        //if (isDone && Input.GetKeyDown(KeyCode.RightArrow))
+        //{
 
 
-            targetPosition = transform.position + new Vector3(1.3f, 0, 0);
-            StartCoroutine("playerMove");
-        }
-        if (isDone && Input.GetKeyDown(KeyCode.LeftArrow))
-        {
+        //    targetPosition = transform.position + new Vector3(1.3f, 0, 0);
+        //    StartCoroutine("playerMove");
+        //}
+        //if (isDone && Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
 
 
-            targetPosition = transform.position + new Vector3(-1.3f, 0, 0);
-            StartCoroutine("playerMove");
+        //    targetPosition = transform.position + new Vector3(-1.3f, 0, 0);
+        //    StartCoroutine("playerMove");
 
-        }
-        if (isDone && Input.GetKeyDown(KeyCode.UpArrow))
-        {
+        //}
+        //if (isDone && Input.GetKeyDown(KeyCode.UpArrow))
+        //{
 
 
-            targetPosition = transform.position + new Vector3(0, 0, 1.3f);
-            StartCoroutine("playerMove");
+        //    targetPosition = transform.position + new Vector3(0, 0, 1.3f);
+        //    StartCoroutine("playerMove");
 
-        }
-        if (isDone && Input.GetKeyDown(KeyCode.DownArrow))
-        {
+        //}
+        //if (isDone && Input.GetKeyDown(KeyCode.DownArrow))
+        //{
             
 
-            targetPosition = transform.position + new Vector3(0, 0, -1.3f);
-            StartCoroutine("playerMove");
+        //    targetPosition = transform.position + new Vector3(0, 0, -1.3f);
+        //    StartCoroutine("playerMove");
 
-        }
+        //}
         if (groundCheckRaycast.instance.grounded == false)
         {
             playerFall();

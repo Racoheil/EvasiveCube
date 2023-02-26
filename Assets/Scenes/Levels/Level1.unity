@@ -3718,12 +3718,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446732671}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4564cdca0341b7845a80da408c3426e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveScript: {fileID: 2107380812}
+  playerMoveScript2: {fileID: 0}
 --- !u!4 &446732673
 Transform:
   m_ObjectHideFlags: 0

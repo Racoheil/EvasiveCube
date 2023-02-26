@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerBalance : MonoBehaviour
 {
-    [SerializeField] public static int Balance=0;
+    [SerializeField] public static int Balance=100;
     [SerializeField] Text textBalance;
     public static PlayerBalance instance;
     public void topBalance(int sum) { Balance += sum; }

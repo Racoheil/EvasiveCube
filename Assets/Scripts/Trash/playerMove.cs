@@ -48,7 +48,7 @@ public class playerMove : MonoBehaviour
     }
     void Start()
     {
-        SwipeManager.instance.onSwipeEvent += Jump;
+       // SwipeManager.instance.onSwipeEvent += Jump;
     }
     void FixedUpdate()
     {

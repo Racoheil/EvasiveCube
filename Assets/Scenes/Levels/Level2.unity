@@ -5464,6 +5464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveScript: {fileID: 2107380812}
+  playerMoveScript2: {fileID: 0}
 --- !u!4 &446732673
 Transform:
   m_ObjectHideFlags: 0
@@ -16488,6 +16489,7 @@ GameObject:
   - component: {fileID: 1603725810}
   - component: {fileID: 446732679}
   - component: {fileID: 1603725812}
+  - component: {fileID: 1603725814}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -16584,6 +16586,20 @@ MonoBehaviour:
   loseObjects: {fileID: 985196169}
   winObjects: {fileID: 1365003999}
   timer: {fileID: 1899423074}
+--- !u!114 &1603725814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603725808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4564cdca0341b7845a80da408c3426e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoveScript: {fileID: 2107380812}
+  playerMoveScript2: {fileID: 0}
 --- !u!4 &1603725815
 Transform:
   m_ObjectHideFlags: 0
