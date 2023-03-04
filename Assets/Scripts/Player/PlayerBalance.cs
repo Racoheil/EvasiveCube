@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerBalance : MonoBehaviour
 {
-    [SerializeField] public static int Balance=100;
+    [SerializeField]  static int Balance=100;
     [SerializeField] Text textBalance;
     public static PlayerBalance instance;
-    public void topBalance(int sum) { Balance += sum; }
+    public void topBalance(int sum) { Balance += sum; textBalance.text = $"{Balance}"; }
+    public void reduceBalance(int sum) { Balance -= sum; textBalance.text = $"{Balance}"; }
     public int getBalance() { return Balance; }
     private void Awake()
     {

@@ -87,7 +87,7 @@ public class SkinsControl : MonoBehaviour
     {
         if (PlayerBalance.instance.getBalance() >= 100)
         {
-            PlayerBalance.instance.topBalance(-100);
+            PlayerBalance.instance.reduceBalance(100);
             skin3.gameObject.SetActive(false);
             bSkin3.gameObject.SetActive(true);
             isSkin3 = true;

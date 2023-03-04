@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class ButtonsControll : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject pausePanel;
+    public GameObject pauseButton;
     public int selectedLevel=1;
     
     public static bool isUnBlocked = false;
@@ -15,12 +17,17 @@ public class ButtonsControll : MonoBehaviour
     public bool isSound;
     public TMP_Text NumberOfLevel;
     //public void unBlocked() { isUnBlocked = true; }
+    public void pauseButtonHide()
+    {
+        pauseButton.SetActive(false);
+    }
     private void Start()
     {
         if (playerInfromation.isAd == false)
         {
             panel.SetActive(false);
         }
+        pausePanel.SetActive(false);
     }
     public void adOff()
     {
@@ -95,5 +102,16 @@ public class ButtonsControll : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
 
     }
-
+    public void Resume()
+    {
+        pausePanel.SetActive(false);
+    }
+    public void ClosePausePanel()
+    {
+        pausePanel.SetActive(false); 
+    }
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+    }
 }

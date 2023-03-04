@@ -21,6 +21,7 @@ public class LoseWinManager : MonoBehaviour
 
     public void playerLose()
     {
+        ButtonsControll.instance.pauseButtonHide();
         playerMove.instance.isMove = false;
         ChangeMode.instance.StopAllCoroutines();
         // ChangeMode.instance.changeMode(0);
@@ -29,10 +30,12 @@ public class LoseWinManager : MonoBehaviour
         loseObjects.SetActive(true);
         if (ChangeMode.instance.isFirstLevel){ BombsGenerate.instance.isGenerateBombs = false; Debug.Log("Деньги закинуть"); PlayerBalance.instance.topBalance(100); }
         if (ChangeMode.instance.isSecondLevel) { CellsHeat.instance.isHeat = false; }
+        
         //playerMove.instance.isCorrect = false;
     }
     public void playerWin()
     {
+        ButtonsControll.instance.pauseButtonHide();
         playerMove2.instance.isMove = false;
         ChangeMode.instance.StopAllCoroutines();
        // ChangeMode.instance.changeMode(0);
