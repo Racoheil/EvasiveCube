@@ -17393,6 +17393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
   pausePanel: {fileID: 24370136}
+  pauseButton: {fileID: 712901780}
   selectedLevel: 1
   isSound: 0
   NumberOfLevel: {fileID: 0}
