@@ -16,6 +16,8 @@ public class ButtonsControll : MonoBehaviour
     public static ButtonsControll instance;
     public bool isSound;
     public TMP_Text NumberOfLevel;
+    public GameObject ShopWindow, MainMenuWindow;
+
     //public void unBlocked() { isUnBlocked = true; }
     public void pauseButtonHide()
     {
@@ -27,7 +29,7 @@ public class ButtonsControll : MonoBehaviour
         {
             panel.SetActive(false);
         }
-        pausePanel.SetActive(false);
+       // pausePanel.SetActive(false);
     }
     public void adOff()
     {
@@ -48,7 +50,10 @@ public class ButtonsControll : MonoBehaviour
     public void GoToShop()
     {
         Debug.Log("go to shop");
-        SceneManager.LoadScene("Shop");
+        //SceneManager.LoadScene("Shop");
+        ShopWindow.gameObject.SetActive(true);
+        MainMenuWindow.gameObject.SetActive(false);
+
     }
     public void SignUpIn()
     {

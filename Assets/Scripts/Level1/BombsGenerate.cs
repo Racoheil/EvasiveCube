@@ -14,7 +14,7 @@ public static BombsGenerate instance;
     //[SerializeField] List<GameObject> cells2 = new List<GameObject>();
     [SerializeField] Vector3 bombPos;
  //   [SerializeField] int[] randomOrder,randomOrder2;
-    [SerializeField] static int height = 10;
+    [SerializeField] int height = 10;
     public bool isGenerateBombs;
     [SerializeField] float spawnWait=0.5f;
     // [SerializeField] bool isSpawnBombs;

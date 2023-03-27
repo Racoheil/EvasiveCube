@@ -62,37 +62,37 @@ public class playerMove2 : MonoBehaviour
     {
 
 
-        //if (isDone && Input.GetKeyDown(KeyCode.RightArrow))
-        //{
+        if (isDone && Input.GetKeyDown(KeyCode.RightArrow))
+        {
 
 
-        //    targetPosition = transform.position + new Vector3(1.3f, 0, 0);
-        //    StartCoroutine("playerMove");
-        //}
-        //if (isDone && Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
+            targetPosition = transform.position + new Vector3(1.3f, 0, 0);
+            StartCoroutine("playerMove");
+        }
+        if (isDone && Input.GetKeyDown(KeyCode.LeftArrow))
+        {
 
 
-        //    targetPosition = transform.position + new Vector3(-1.3f, 0, 0);
-        //    StartCoroutine("playerMove");
+            targetPosition = transform.position + new Vector3(-1.3f, 0, 0);
+            StartCoroutine("playerMove");
 
-        //}
-        //if (isDone && Input.GetKeyDown(KeyCode.UpArrow))
-        //{
+        }
+        if (isDone && Input.GetKeyDown(KeyCode.UpArrow))
+        {
 
 
-        //    targetPosition = transform.position + new Vector3(0, 0, 1.3f);
-        //    StartCoroutine("playerMove");
+            targetPosition = transform.position + new Vector3(0, 0, 1.3f);
+            StartCoroutine("playerMove");
 
-        //}
-        //if (isDone && Input.GetKeyDown(KeyCode.DownArrow))
-        //{
-            
+        }
+        if (isDone && Input.GetKeyDown(KeyCode.DownArrow))
+        {
 
-        //    targetPosition = transform.position + new Vector3(0, 0, -1.3f);
-        //    StartCoroutine("playerMove");
 
-        //}
+            targetPosition = transform.position + new Vector3(0, 0, -1.3f);
+            StartCoroutine("playerMove");
+
+        }
         if (groundCheckRaycast.instance.grounded == false)
         {
             playerFall();

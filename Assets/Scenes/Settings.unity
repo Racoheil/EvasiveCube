@@ -751,8 +751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -378.32, y: 1033.1}
-  m_SizeDelta: {x: 75.49, y: 77.46}
+  m_AnchoredPosition: {x: -404.949, y: 842.579}
+  m_SizeDelta: {x: 128.75, y: 122.618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966151954
 MonoBehaviour:
@@ -1103,9 +1103,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  pauseButton: {fileID: 0}
   selectedLevel: 1
   isSound: 0
   NumberOfLevel: {fileID: 0}
+  ShopWindow: {fileID: 0}
+  MainMenuWindow: {fileID: 0}
 --- !u!4 &1825130480
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1da9c7faf2c4e41bc013cae0f8821a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBalance: {fileID: 2036824088}
+  balanceText: {fileID: 0}
 --- !u!4 &1916271579
 Transform:
   m_ObjectHideFlags: 0
