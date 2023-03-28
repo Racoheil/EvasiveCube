@@ -3886,13 +3886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25e1866bce4b9c4eaac6631a27affa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isChange: 1
-  mode: 0
-  maxMode: 5
-  drags: []
-  waitTimes: []
-  isFirstLevel: 1
-  isSecondLevel: 0
 --- !u!114 &446732675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4128,6 +4121,8 @@ MonoBehaviour:
   selectedLevel: 1
   isSound: 0
   NumberOfLevel: {fileID: 0}
+  ShopWindow: {fileID: 0}
+  MainMenuWindow: {fileID: 0}
 --- !u!1 &447929076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8168082270321882006, guid: ad92f179c2d89824fbdf0abafd8f0135, type: 3}
@@ -17277,6 +17272,7 @@ GameObject:
   - component: {fileID: 2107380813}
   - component: {fileID: 2107380807}
   - component: {fileID: 2107380812}
+  - component: {fileID: 2107380817}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -17454,7 +17450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107380806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1ffe80508ca6c941af7f051f35e2b94, type: 3}
   m_Name: 
@@ -17465,6 +17461,22 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 82e0482b6f570884dafa63e9a4a9ba4c, type: 2}
   - {fileID: 2100000, guid: 168eb36cb12ed1f4c8f42dc5df541d66, type: 2}
   - {fileID: 2100000, guid: 4d3076201e7a86c42bfc6bbade17b782, type: 2}
+  - {fileID: 2100000, guid: 2e86a49a2b793df41926dbdf09181bd3, type: 2}
+--- !u!114 &2107380817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107380806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e3a8f6f50dd6847b3b1e0817201a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skins:
+  - {fileID: 2100000, guid: 82e0482b6f570884dafa63e9a4a9ba4c, type: 2}
+  - {fileID: 2100000, guid: ad26ba2f2d21d1645aa153d3339ff31f, type: 2}
   - {fileID: 2100000, guid: 2e86a49a2b793df41926dbdf09181bd3, type: 2}
 --- !u!1 &2108527644 stripped
 GameObject:
