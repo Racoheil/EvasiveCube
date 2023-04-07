@@ -3039,6 +3039,7 @@ GameObject:
   - component: {fileID: 446732675}
   - component: {fileID: 446732676}
   - component: {fileID: 446732677}
+  - component: {fileID: 446732674}
   - component: {fileID: 446732679}
   - component: {fileID: 446732678}
   m_Layer: 0
@@ -3075,7 +3076,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &446732675
+--- !u!114 &446732674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3084,10 +3085,133 @@ MonoBehaviour:
   m_GameObject: {fileID: 446732671}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b760a9296ff654e4cb1e2aaeeda13d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolCount: 500
+  autoExpand: 1
+  bombPrefab: {fileID: 7994246301909081682, guid: 779602546d4b96a4db895e8e6ff25c53, type: 3}
+  cells:
+  - {fileID: 1281434868}
+  - {fileID: 602619191}
+  - {fileID: 1527804170}
+  - {fileID: 28252430}
+  - {fileID: 2070251848}
+  - {fileID: 1763142560}
+  - {fileID: 1220113375}
+  - {fileID: 1849034881}
+  - {fileID: 1922017844}
+  - {fileID: 1443483755}
+  - {fileID: 2111517467}
+  - {fileID: 1126225266}
+  - {fileID: 1046471874}
+  - {fileID: 557453080}
+  - {fileID: 970847120}
+  - {fileID: 1033759404}
+  - {fileID: 1457234831}
+  - {fileID: 462412692}
+  - {fileID: 941435493}
+  - {fileID: 264180346}
+  - {fileID: 974778875}
+  - {fileID: 131345324}
+  - {fileID: 1771415920}
+  - {fileID: 1075399116}
+  - {fileID: 838039457}
+  - {fileID: 166129386}
+  - {fileID: 1067134331}
+  - {fileID: 1533646921}
+  - {fileID: 440996362}
+  - {fileID: 1572651739}
+  - {fileID: 1131822091}
+  - {fileID: 268147165}
+  - {fileID: 638727886}
+  - {fileID: 420198421}
+  - {fileID: 1902814064}
+  - {fileID: 114518399}
+  - {fileID: 360187129}
+  - {fileID: 1608601276}
+  - {fileID: 360379940}
+  - {fileID: 1215470530}
+  - {fileID: 41358652}
+  - {fileID: 1102610300}
+  - {fileID: 792344118}
+  - {fileID: 1243004018}
+  - {fileID: 1272222046}
+  - {fileID: 173111599}
+  - {fileID: 2113577101}
+  - {fileID: 2108527644}
+  - {fileID: 1806084849}
+  - {fileID: 1355717646}
+  - {fileID: 181510099}
+  - {fileID: 1777985712}
+  - {fileID: 1275142415}
+  - {fileID: 383810843}
+  - {fileID: 329766740}
+  - {fileID: 814967698}
+  - {fileID: 503490342}
+  - {fileID: 831424492}
+  - {fileID: 40800106}
+  - {fileID: 1293569645}
+  - {fileID: 1395570415}
+  - {fileID: 1076237366}
+  - {fileID: 201971027}
+  - {fileID: 370011044}
+  - {fileID: 1679152372}
+  - {fileID: 807484549}
+  - {fileID: 449489613}
+  - {fileID: 1104912984}
+  - {fileID: 1797636454}
+  - {fileID: 717394448}
+  - {fileID: 28983310}
+  - {fileID: 1106370879}
+  - {fileID: 1903838479}
+  - {fileID: 1678635137}
+  - {fileID: 22497631}
+  - {fileID: 724155982}
+  - {fileID: 980089629}
+  - {fileID: 1519781262}
+  - {fileID: 1699856398}
+  - {fileID: 930467075}
+  - {fileID: 1379937297}
+  - {fileID: 1415740060}
+  - {fileID: 1672730077}
+  - {fileID: 288009937}
+  - {fileID: 795340079}
+  - {fileID: 86151516}
+  - {fileID: 1055789467}
+  - {fileID: 1253774281}
+  - {fileID: 1279671090}
+  - {fileID: 1434221471}
+  - {fileID: 1054011471}
+  - {fileID: 1351359290}
+  - {fileID: 1731833994}
+  - {fileID: 2127034475}
+  - {fileID: 1514460152}
+  - {fileID: 578877260}
+  - {fileID: 1436611839}
+  - {fileID: 1282771939}
+  - {fileID: 1784238360}
+  - {fileID: 395227872}
+  bombPos: {x: 0, y: 0, z: 0}
+  height: 10
+  isGenerateBombs: 1
+  spawnWait: 0.1
+  cellsPositions: []
+  isChange: 0
+  currentDrag: 10
+--- !u!114 &446732675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446732671}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b231c49dd19f85342b6845e315f1de1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDrag: 10
+  currentDrag: 1
   bomb: {fileID: 7994246301909081682, guid: 779602546d4b96a4db895e8e6ff25c53, type: 3}
   cells:
   - {fileID: 1281434868}

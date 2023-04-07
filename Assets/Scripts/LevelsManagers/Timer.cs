@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     [SerializeField]Image timerBar;
-    [SerializeField] float maxTime = 50f;
+    [SerializeField] float maxTime = 60f;
     float timeLeft;
     int time = 0;
     [SerializeField] Text score;

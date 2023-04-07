@@ -21,10 +21,7 @@ public static BombsGenerate instance;
     [SerializeField] public List<Vector3> cellsPositions;
     [SerializeField] bool isChange;
 
-    void Update()
-    {
-        
-    }
+   
     public void fillList()
     {
         
@@ -34,10 +31,7 @@ public static BombsGenerate instance;
             
         }
     }
-    void changeDamage()
-    {
-        
-    }
+   
     void Awake() {
         currentDrag = 10;
         instance = this;
@@ -64,11 +58,7 @@ public static BombsGenerate instance;
       
         while (isGenerateBombs==true)
         {
-            //if (cellsPositions.Count < 1)
-            //{
-            //    isGenerateBombs = false;
-            //    StopCoroutine(spawnBombCoroutine3());
-            //}
+            
             bombPos = cellsPositions[UnityEngine.Random.Range(0, cellsPositions.Count)];
             bombPos.y = height;
             bomb.rb.drag = currentDrag;

@@ -31,8 +31,11 @@ public Rigidbody rb;
             HealthSystem.instance.TakeDamage(damage);
  
         }
-        
-        Destroy(gameObject);
+        Deactivate();
+        //Destroy(gameObject);
     }
-   
+   public void Deactivate()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
