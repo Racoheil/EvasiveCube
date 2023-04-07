@@ -8,10 +8,10 @@ public class CellControl : MonoBehaviour
     [SerializeField] Material brokenCell,brokenCell2;
     MeshRenderer meshRenderer;
     
-   // int hp;
+   
     void Start()
     {
-        // hp = 2;
+        
          meshRenderer = GetComponent<MeshRenderer>();
     }
     public void hitCell( ){
@@ -40,7 +40,6 @@ public class CellControl : MonoBehaviour
         {
 
             hitCell();
-            //cellControl.hitCell();
 
 
         }

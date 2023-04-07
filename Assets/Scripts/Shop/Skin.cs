@@ -13,19 +13,19 @@ public class Skin : MonoBehaviour
     public Button buyButton;
     public Button selectButton;
     public SkinsShop skinsShop;
-
+    public PlayerBalance playerBalance;
     public Text selectBtnText;
 
     public void Buy()
     {
-        if (cost <= skinsShop.balance)
+        if (cost <= playerBalance.balance)
         {
-            skinsShop.balance -= cost;
-            skinsShop.balanceText.text = skinsShop.balance.ToString();
+            playerBalance.balance -= cost;
+            playerBalance.balanceText.text = playerBalance.balance.ToString();
             isBought = true;
             buyButton.gameObject.SetActive(false);
             selectButton.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("balance", skinsShop.balance);
+            PlayerPrefs.SetInt("balance", playerBalance.balance);
             PlayerPrefs.SetInt("buy" + skinID, 1);
             PlayerPrefs.Save();
         }

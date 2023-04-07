@@ -7,6 +7,7 @@ public class PlayerSkin : MonoBehaviour
     //private SpriteRenderer spriteRenderer;
   //  public Sprite[] scins;
     public Material[] skins = new Material[3];
+    public GameObject[] skins2 = new GameObject[4];
     private void Start()
     {
         int skinsID = PlayerPrefs.GetInt("skinsID");

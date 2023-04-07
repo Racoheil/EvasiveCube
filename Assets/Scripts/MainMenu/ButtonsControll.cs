@@ -8,33 +8,29 @@ using UnityEngine.UI;
 public class ButtonsControll : MonoBehaviour
 {
     public GameObject panel;
-    public GameObject pausePanel;
-    public GameObject pauseButton;
+   // public GameObject pausePanel;
+   // public GameObject pauseButton;
     public int selectedLevel=1;
     
-    public static bool isUnBlocked = false;
+    //public static bool isUnBlocked = false;
     public static ButtonsControll instance;
     public bool isSound;
     public TMP_Text NumberOfLevel;
     public GameObject ShopWindow, MainMenuWindow;
-
+    
     //public void unBlocked() { isUnBlocked = true; }
-    public void pauseButtonHide()
-    {
-        pauseButton.SetActive(false);
-    }
+    //public void pauseButtonHide()
+    //{
+    //    pauseButton.SetActive(false);
+    //}
     private void Start()
     {
-        if (playerInfromation.isAd == false)
-        {
-            panel.SetActive(false);
-        }
-       // pausePanel.SetActive(false);
+        
     }
     public void adOff()
     {
         
-        playerInfromation.isAd = false;
+
         Debug.Log("Ads off");
     }
     private void Awake()
@@ -66,13 +62,10 @@ public class ButtonsControll : MonoBehaviour
     }
     public void Next()
     {
-        //Debug.Log("NExt");
-        //if (playerInfromation.isUnblocked!=true) { Debug.Log("BLOCKED"); }
-        //else if (playerInfromation.isUnblocked == true)
-        //{
+        
             NumberOfLevel.text = "2";
             selectedLevel = 2;
-        //}
+        
      
     }
     public void Back()
@@ -103,20 +96,24 @@ public class ButtonsControll : MonoBehaviour
     }
     public void BackToMenu()
     {
+
         Debug.Log("Back to menu");
-        SceneManager.LoadScene("MainMenu");
+        //    SceneManager.LoadScene("MainMenu");
+       // foreach(GameObject window in )
+       ShopWindow.gameObject.SetActive(false);
+        MainMenuWindow.gameObject.SetActive(true);
 
     }
-    public void Resume()
-    {
-        pausePanel.SetActive(false);
-    }
-    public void ClosePausePanel()
-    {
-        pausePanel.SetActive(false); 
-    }
-    public void PauseGame()
-    {
-        pausePanel.SetActive(true);
-    }
+    //public void Resume()
+    //{
+    //    pausePanel.SetActive(false);
+    //}
+    //public void ClosePausePanel()
+    //{
+    //    pausePanel.SetActive(false); 
+    //}
+    //public void PauseGame()
+    //{
+    //    pausePanel.SetActive(true);
+    //}
 }

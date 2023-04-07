@@ -6,7 +6,7 @@ public class groundCheckRaycast : MonoBehaviour
 {
     public bool grounded = false;
     public float groundedCheckDistance = 1f;
-  //  private float bufferCheckDistance = 0.1f;
+
     public static groundCheckRaycast instance;
 
     void Awake()
@@ -16,8 +16,7 @@ public class groundCheckRaycast : MonoBehaviour
 
     void Update()
     {
-       // groundedCheckDistance = (GetComponent<CapsuleCollider>().height / 2) + bufferCheckDistance;
-      //  groundedCheckDistance = (GetComponent<BoxCollider>().size.y / 2) + bufferCheckDistance;
+     
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, groundedCheckDistance)){
             grounded = true;
