@@ -5,18 +5,14 @@ using UnityEngine.UI;
 
 public class SkinsShop : MonoBehaviour
 {
-    //public int balance = 200;
-    //public Text balanceText;
+    
     public Skin[] skins;
     public int activeSkinID = 0;
     public bool isDeleteAll;
     private void Start()
     {
         if (isDeleteAll) PlayerPrefs.DeleteAll();
-        //if (PlayerPrefs.HasKey("balance"))
-        //{
-        //    balance = PlayerPrefs.GetInt("balance");
-        //}
+       
         if (PlayerPrefs.HasKey("skinsID"))
         {
             activeSkinID = PlayerPrefs.GetInt("skinsID");

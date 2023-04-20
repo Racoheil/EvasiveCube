@@ -45,4 +45,5 @@ public class LoseWinManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }
+
 }

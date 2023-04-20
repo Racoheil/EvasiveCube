@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerBalance : MonoBehaviour
 {
+    public static PlayerBalance instance;
     public int balance = 200;
     public Text balanceText;
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("balance"))
@@ -16,6 +18,18 @@ public class PlayerBalance : MonoBehaviour
         }
         balanceText.text = balance.ToString();
     }
-
+    private void Awake()
+    {
+        instance = this;
+    }
+    public void SaveBalance(int money)
+    {
+        PlayerPrefs.SetInt("balance", money);
+    }
+    public void AddMoney(int money)
+    {
+        balance += money;
+        balanceText.text = balance.ToString();
+    }
 
 }
