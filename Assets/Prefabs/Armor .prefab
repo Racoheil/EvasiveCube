@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4680395194578717679}
   - component: {fileID: 530034778863624898}
   - component: {fileID: 6342693807042784949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Armor  (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5173341134104846956}
   - component: {fileID: 4472978643104762141}
   - component: {fileID: 5173341134104846957}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Armor '
   m_TagString: Bonus
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 3561482478231178955}
   - component: {fileID: 7849829805682940021}
   - component: {fileID: 7876862824178773878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Armor '
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5922879003070671701}
   - component: {fileID: 896670101315587913}
   - component: {fileID: 6374260895290739735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Money
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db317249d31febe4abedb39a0e4113d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
 --- !u!135 &6374260895290739735
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -129,6 +128,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ebfb0635b27d6ea4aad884257ee9e330, type: 3}
       propertyPath: m_Name
       value: ballMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ebfb0635b27d6ea4aad884257ee9e330, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebfb0635b27d6ea4aad884257ee9e330, type: 3}

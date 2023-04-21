@@ -11,10 +11,11 @@ public class BombsGenerate2 : MonoBehaviour
     public static BombsGenerate2 instance;
     [SerializeField] GameObject[] cells;
     [SerializeField] Vector3 bombPos;
-
+    [SerializeField] GameObject Player;
     [SerializeField] int height = 10;
     public bool isGenerateBombs;
     [SerializeField] float spawnWait = 0.5f;
+    [SerializeField] float spawnWait2 = 10f;
 
     [SerializeField] public List<Vector3> cellsPositions;
     [SerializeField] bool isChange;
@@ -37,6 +38,7 @@ public class BombsGenerate2 : MonoBehaviour
         {
 
             StartCoroutine(spawnBombCoroutine3());
+          //  StartCoroutine(KillerBombCoroutine());
         }
     }
     public void RemoveCell(Vector3 cellPos)
@@ -67,13 +69,43 @@ public class BombsGenerate2 : MonoBehaviour
 
 
     }
+    IEnumerator KillerBombCoroutine()
+    {
+
+        while (isGenerateBombs == true)
+        {
+
+            
+          
+            this.KillerBombSpawn();
+            yield return new WaitForSeconds(spawnWait2);
+
+        }
+
+
+    }
     private void SpawnBomb()
     {
         bombPos = cellsPositions[UnityEngine.Random.Range(0, cellsPositions.Count)];
+      //  bombPos = cellsPositions[];
         bombPos.y = height;
        // bombPrefab.rb.drag = currentDrag;
         var bomb = this.pool.GetFreeElement();
         bomb.transform.position = bombPos;
-       // bombPrefab.rb.drag = currentDrag;
+        bomb.rb.drag = currentDrag;
+    }
+    private void KillerBombSpawn()
+    {
+        bombPos = Player.transform.position;
+        bombPos.y = height;
+        // bombPrefab.rb.drag = currentDrag;
+        var bomb = this.pool.GetFreeElement();
+        bomb.transform.position = bombPos;
+        
+   
+    }
+    public void reduceBombDrag(int value)
+    {
+       currentDrag -= value;
     }
 }

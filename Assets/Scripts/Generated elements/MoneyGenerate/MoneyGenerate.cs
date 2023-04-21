@@ -65,8 +65,7 @@ public class MoneyGenerate : MonoBehaviour
       
         if (cells[numberOfCell].gameObject.activeSelf == true)
         {
-            //moneyPos = cellsPositions[UnityEngine.Random.Range(0, cellsPositions.Count)];
-            //moneyPos.y = height;
+            
            Vector3 moneyPos = new Vector3(cells[numberOfCell].transform.position.x, 
                height, cells[numberOfCell].transform.position.z);
           //  moneyPos.y = height;

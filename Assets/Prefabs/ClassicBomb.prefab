@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8672233742116333708}
   - component: {fileID: 7994246301909081682}
   - component: {fileID: 3981712264735202075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClassicBomb
   m_TagString: Bomb
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ Rigidbody:
   m_GameObject: {fileID: 341246573948094336}
   serializedVersion: 2
   m_Mass: 0.0000001
-  m_Drag: 10
+  m_Drag: 0
   m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -192,9 +192,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1025663018108745142, guid: aab55b5a19c720a409a7d4266a675840, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aab55b5a19c720a409a7d4266a675840, type: 3}
       propertyPath: m_Name
       value: Bomb2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aab55b5a19c720a409a7d4266a675840, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891746525080496957, guid: aab55b5a19c720a409a7d4266a675840, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424396828587804706, guid: aab55b5a19c720a409a7d4266a675840, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aab55b5a19c720a409a7d4266a675840, type: 3}

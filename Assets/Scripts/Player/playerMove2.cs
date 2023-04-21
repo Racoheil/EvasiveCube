@@ -129,4 +129,8 @@ public class playerMove2 : MonoBehaviour
         }
 
     }
+    public void changeSpeed(int value)
+    {
+        speed += value;
+    }
 }

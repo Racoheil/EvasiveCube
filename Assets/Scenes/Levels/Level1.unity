@@ -2201,6 +2201,7 @@ GameObject:
   - component: {fileID: 446732674}
   - component: {fileID: 446732679}
   - component: {fileID: 446732678}
+  - component: {fileID: 446732681}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2352,12 +2353,14 @@ MonoBehaviour:
   - {fileID: 1784238360}
   - {fileID: 395227872}
   bombPos: {x: 0, y: 0, z: 0}
+  Player: {fileID: 2107380806}
   height: 10
   isGenerateBombs: 1
-  spawnWait: 0.2
+  spawnWait: 0.3
+  spawnWait2: 5
   cellsPositions: []
   isChange: 0
-  currentDrag: 10
+  currentDrag: 0
 --- !u!114 &446732675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2517,7 +2520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446732671}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a57b4ffd110bcd349b86037377e9f333, type: 3}
   m_Name: 
@@ -2666,6 +2669,22 @@ MonoBehaviour:
   spawnWait: 10
   cellsPositions: []
   autoExpand: 1
+--- !u!114 &446732681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446732671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e408ddc3735a31f4c9477d086c55482a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStep: 5
+  bombDragStep: 1
+  playerSpeedStep: 1
+  isChange: 1
 --- !u!1 &449489613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8168082270321882006, guid: ad92f179c2d89824fbdf0abafd8f0135, type: 3}
@@ -3277,7 +3296,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587906874}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fafc82af381daa84aad272b1cf8ee971, type: 3}
   m_Name: 
@@ -3285,6 +3304,7 @@ MonoBehaviour:
   timerBar: {fileID: 0}
   maxTime: 60
   score: {fileID: 794100509}
+  isStop: 0
 --- !u!1001 &602270075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4737,7 +4757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882313584}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PlayerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5350,7 +5370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2134222348}
-  smoothSpeed: 0.005
+  smoothSpeed: 0.05
   offset: {x: -0.009999998, y: 5.85, z: -8.15}
 --- !u!1 &970847120 stripped
 GameObject:
@@ -10838,7 +10858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134222348}
   m_Layer: 0
-  m_Name: PlayerObject
+  m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10852,7 +10872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134222347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.54, z: 2.85}
+  m_LocalPosition: {x: 0, y: 6.51, z: 1.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2107380811}

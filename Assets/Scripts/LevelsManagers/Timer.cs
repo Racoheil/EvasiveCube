@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     int time = 0;
     [SerializeField] Text score;
     public static Timer instance;
+    public bool isStop = false;
     void Awake()
     {
         instance = this;
@@ -27,10 +28,12 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         StopCoroutine(timerCoroutine());
+        isStop = true;
     }
    
     IEnumerator timerCoroutine()
     {
+        isStop = false;
         while(timerBar.fillAmount>=0)
         {
             score.text = time.ToString();
@@ -40,7 +43,7 @@ public class Timer : MonoBehaviour
             //   Debug.Log("Time: "+time);
             score.text = time.ToString();
             time++;
-            if (time == maxTime) { LoseWinManager.instance.playerWin(); }
+            if (time == maxTime) { LoseWinManager.instance.playerWin(); isStop = true; }
         }
        
        

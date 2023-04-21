@@ -25,17 +25,19 @@ public Rigidbody rb;
     private void OnCollisionEnter(Collision collision)
     {
 
-      
-         if (collision.gameObject.tag == "Player")
+        
+        if (collision.gameObject.tag == "Player")
         {
             HealthSystem.instance.TakeDamage(damage);
- 
+           // Deactivate();
         }
-        Deactivate();
+       // if (collision.gameObject.tag == "Cell"|| collision.gameObject.tag == "Money") 
+            Deactivate();
         //Destroy(gameObject);
     }
    public void Deactivate()
     {
         this.gameObject.SetActive(false);
     }
+
 }
