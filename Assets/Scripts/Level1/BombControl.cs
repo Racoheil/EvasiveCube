@@ -6,7 +6,7 @@ public class BombControl : MonoBehaviour
 {
     
     [SerializeField] CellControl cellControl;
-    [SerializeField]static int damage = 1;
+    [SerializeField] int damage = 1;
  
     
     
@@ -25,15 +25,22 @@ public Rigidbody rb;
     private void OnCollisionEnter(Collision collision)
     {
 
-        
-        if (collision.gameObject.tag == "Player")
+        switch (collision.gameObject.tag)
         {
-            HealthSystem.instance.TakeDamage(damage);
-           // Deactivate();
+            case "Player":
+                HealthSystem.instance.TakeDamage(damage);
+                Deactivate();
+              
+            
+                break;
+            default:
+                Deactivate();
+                break;
         }
-       // if (collision.gameObject.tag == "Cell"|| collision.gameObject.tag == "Money") 
-            Deactivate();
-        //Destroy(gameObject);
+       
+
+        
+     
     }
    public void Deactivate()
     {

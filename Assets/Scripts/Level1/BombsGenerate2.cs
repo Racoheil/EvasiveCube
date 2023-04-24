@@ -5,23 +5,26 @@ using UnityEngine;
 using System;
 public class BombsGenerate2 : MonoBehaviour
 {
-    [SerializeField] private int poolCount =500;
+    [SerializeField] private int BombsPoolCount =500;
+    [SerializeField] private int KBombsPoolCount = 12;
     [SerializeField] private bool autoExpand = false;
     [SerializeField] BombControl bombPrefab;
+    [SerializeField] BombControl KbombPrefab;
     public static BombsGenerate2 instance;
     [SerializeField] GameObject[] cells;
     [SerializeField] Vector3 bombPos;
     [SerializeField] GameObject Player;
     [SerializeField] int height = 10;
     public bool isGenerateBombs;
-    [SerializeField] float spawnWait = 0.5f;
+     float spawnWait = 0.3f;
     [SerializeField] float spawnWait2 = 10f;
 
     [SerializeField] public List<Vector3> cellsPositions;
     [SerializeField] bool isChange;
     public float currentDrag;
-    private PoolMono<BombControl> pool;
-
+    private PoolMono<BombControl> BombsPool;
+    private PoolMono<BombControl> KBombsPool;
+    public void addTimeBombsSpawn(float time) { spawnWait += time; }
     void Awake()
     {
         currentDrag = 10;
@@ -32,13 +35,15 @@ public class BombsGenerate2 : MonoBehaviour
     
     private void Start()
     {
-        this.pool = new PoolMono<BombControl>(this.bombPrefab, this.poolCount, this.transform);
-        this.pool.autoExpand = this.autoExpand;
+        this.BombsPool = new PoolMono<BombControl>(this.bombPrefab, this.BombsPoolCount, this.transform);
+        this.KBombsPool = new PoolMono<BombControl>(this.KbombPrefab, this.KBombsPoolCount, this.transform);
+        this.BombsPool.autoExpand = this.autoExpand;
+        this.BombsPool.autoExpand = this.autoExpand;
         if (isGenerateBombs)
         {
 
-            StartCoroutine(spawnBombCoroutine3());
-          //  StartCoroutine(KillerBombCoroutine());
+            StartCoroutine(spawnBombCoroutine());
+            StartCoroutine(KillerBombCoroutine());
         }
     }
     public void RemoveCell(Vector3 cellPos)
@@ -54,7 +59,7 @@ public class BombsGenerate2 : MonoBehaviour
 
         }
     }
-    IEnumerator spawnBombCoroutine3()
+    IEnumerator spawnBombCoroutine()
     {
 
         while (isGenerateBombs == true)
@@ -77,9 +82,9 @@ public class BombsGenerate2 : MonoBehaviour
 
             
           
-            this.KillerBombSpawn();
+            
             yield return new WaitForSeconds(spawnWait2);
-
+            this.KillerBombSpawn();
         }
 
 
@@ -90,7 +95,7 @@ public class BombsGenerate2 : MonoBehaviour
       //  bombPos = cellsPositions[];
         bombPos.y = height;
        // bombPrefab.rb.drag = currentDrag;
-        var bomb = this.pool.GetFreeElement();
+        var bomb = this.BombsPool.GetFreeElement();
         bomb.transform.position = bombPos;
         bomb.rb.drag = currentDrag;
     }
@@ -99,7 +104,7 @@ public class BombsGenerate2 : MonoBehaviour
         bombPos = Player.transform.position;
         bombPos.y = height;
         // bombPrefab.rb.drag = currentDrag;
-        var bomb = this.pool.GetFreeElement();
+        var bomb = this.KBombsPool.GetFreeElement();
         bomb.transform.position = bombPos;
         
    

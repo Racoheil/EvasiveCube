@@ -17,6 +17,10 @@ public class Timer : MonoBehaviour
     {
         instance = this;
     }
+    public int getTime()
+    {
+        return time;
+    }
    void Start()
 
     {

@@ -8,7 +8,8 @@ public class Level1Manager : MonoBehaviour
    [SerializeField] int bombDragStep=3;
     [SerializeField] int playerSpeedStep=3;
     [SerializeField] bool isChange;
-
+    [SerializeField] float timeSpawnAdd=0.05f;
+    
     void Start()
 
     {
@@ -20,18 +21,23 @@ public class Level1Manager : MonoBehaviour
     {
         StopCoroutine(changeModeCoroutine());
     }
-
+  
     IEnumerator changeModeCoroutine()
     {
         while (isChange)
         {
 
-         
+            
             yield return new WaitForSeconds(timeStep);
             playerMove2.instance.changeSpeed(playerSpeedStep);
             BombsGenerate2.instance.reduceBombDrag(bombDragStep);
-            Debug.Log("Mode is changed");
-
+            //Debug.Log("Mode is changed");
+            Debug.Log("Time is " + Timer.instance.getTime());
+            if (Timer.instance.getTime() > 40)
+            {
+                Debug.Log("SpawnTimeChanged");
+                BombsGenerate2.instance.addTimeBombsSpawn(-timeSpawnAdd);
+            }
         }
 
 
