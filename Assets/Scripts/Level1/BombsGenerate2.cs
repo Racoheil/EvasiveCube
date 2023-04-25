@@ -25,6 +25,7 @@ public class BombsGenerate2 : MonoBehaviour
     private PoolMono<BombControl> BombsPool;
     private PoolMono<BombControl> KBombsPool;
     public void addTimeBombsSpawn(float time) { spawnWait += time; }
+    public float getSpawnWait() {return spawnWait; }
     void Awake()
     {
         currentDrag = 10;

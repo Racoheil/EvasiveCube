@@ -8,6 +8,7 @@ TagManager:
   - Bonus
   - Bomb
   - Money
+  - KillerBomb
   layers:
   - Default
   - TransparentFX

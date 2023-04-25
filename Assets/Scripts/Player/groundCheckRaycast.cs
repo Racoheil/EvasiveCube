@@ -24,6 +24,7 @@ public class groundCheckRaycast : MonoBehaviour
         else
         {
             grounded = false;
+            playerMove2.instance.playerFall();
         }
 
     }

@@ -2514,6 +2514,7 @@ MonoBehaviour:
   loseObjects: {fileID: 867744789}
   winObjects: {fileID: 1899574117}
   timer: {fileID: 1899423074}
+  pauseButton: {fileID: 848358737}
 --- !u!114 &446732678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2531,7 +2532,7 @@ MonoBehaviour:
   - {fileID: 5173341134104846958, guid: 7cecb4c2902f5c549aa788a4e63af51c, type: 3}
   - {fileID: 6740810817005252738, guid: 37efced8227373248aea2ae9055b059a, type: 3}
   bonusPos: {x: 0, y: 0, z: 0}
-  spawnWait: 12
+  spawnWait: 15
   bombsGenerate: {fileID: 446732675}
 --- !u!114 &446732679
 MonoBehaviour:
@@ -2563,7 +2564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9235c9e80f72da42a60b4f05bb77b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyPrefab: {fileID: 896670101315587913, guid: 1ebb48ddfac1da24189e2ce2f8ca5292, type: 3}
+  moneyPrefab: {fileID: 5262499360387134314, guid: 2c2c4f4403c3f74408338664feb927df, type: 3}
   moneyPrefabsCount: 6
   poolCount: 50
   cells:
@@ -2686,7 +2687,7 @@ MonoBehaviour:
   bombDragStep: 1
   playerSpeedStep: 1
   isChange: 1
-  timeSpawnAdd: 0
+  timeSpawnAdd: 0.03
 --- !u!1 &449489613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8168082270321882006, guid: ad92f179c2d89824fbdf0abafd8f0135, type: 3}
@@ -5372,7 +5373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2134222348}
-  smoothSpeed: 0.05
+  smoothSpeed: 0.1
   offset: {x: -0.009999998, y: 5.85, z: -8.15}
 --- !u!1 &970847120 stripped
 GameObject:
@@ -10482,7 +10483,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &2107380808
 BoxCollider:
@@ -10873,7 +10874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134222347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.51, z: 1.63}
+  m_LocalPosition: {x: 0, y: 7.5, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2107380811}

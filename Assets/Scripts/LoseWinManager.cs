@@ -9,6 +9,7 @@ public class LoseWinManager : MonoBehaviour
     public GameObject loseObjects;
     public GameObject winObjects;
     public GameObject timer;
+    public GameObject pauseButton;
 
     void Awake()
     {
@@ -21,7 +22,7 @@ public class LoseWinManager : MonoBehaviour
 
     public void playerLose()
     {
-      
+        hidePauseButton();
         playerMove.instance.isMove = false;
         Timer.instance.StopTimer();
         timer.SetActive(false);
@@ -30,7 +31,7 @@ public class LoseWinManager : MonoBehaviour
     }
     public void playerWin()
     {
-        
+        hidePauseButton();
         playerMove2.instance.isMove = false;
 
         Timer.instance.StopTimer();
@@ -38,6 +39,10 @@ public class LoseWinManager : MonoBehaviour
         winObjects.SetActive(true);
 
       
+    }
+    void hidePauseButton()
+    {
+        pauseButton.gameObject.SetActive(false);
     }
     public void restartLevel()
     {

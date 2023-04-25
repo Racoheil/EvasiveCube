@@ -33,10 +33,11 @@ public class Level1Manager : MonoBehaviour
             BombsGenerate2.instance.reduceBombDrag(bombDragStep);
             //Debug.Log("Mode is changed");
             Debug.Log("Time is " + Timer.instance.getTime());
-            if (Timer.instance.getTime() > 40)
+            if (Timer.instance.getTime() > 10)
             {
-                Debug.Log("SpawnTimeChanged");
+                
                 BombsGenerate2.instance.addTimeBombsSpawn(-timeSpawnAdd);
+                Debug.Log("SpawnTimeChanged on" +BombsGenerate2.instance.getSpawnWait());
             }
         }
 

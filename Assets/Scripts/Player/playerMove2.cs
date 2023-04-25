@@ -95,18 +95,21 @@ public class playerMove2 : MonoBehaviour
         }
         if (groundCheckRaycast.instance.grounded == false)
         {
-            playerFall();
-            Debug.Log("Падай!");
+           // playerFall();
+         //   Debug.Log("Падай!");
         }
 
 
 
     }
-    void playerFall()
+  public void playerFall()
     {
+        Debug.Log("Пизда мне");
+        cameraMovement.instance.stopMove();
         StopAllCoroutines();
         rb.useGravity = true;
         rb.freezeRotation = false;
+        rb.constraints = RigidbodyConstraints.None;
     }
     IEnumerator playerMove()
     {

@@ -44,6 +44,10 @@ public class CellControl : MonoBehaviour
 
 
         }
+        else if (collision.gameObject.tag == "KillerBomb")
+        {
+            this.gameObject.SetActive(false);
+        }
 
 
     }

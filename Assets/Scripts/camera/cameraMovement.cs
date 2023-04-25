@@ -8,20 +8,34 @@ public class cameraMovement : MonoBehaviour
     public Transform target;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
+    bool isMove;
+    public static cameraMovement instance;
 
     //[SerializeField] private Vector3 _currentVelocity = Vector3.zero;
     //[SerializeField] private float smoothTime;
     private void Awake()
     {
-        //offset = transform.position;
+        instance = this;
+        
 
+    }
+    void Start()
+    {
+        isMove = true;
+    }
+    public void stopMove()
+    {
+        isMove = false;
     }
     private void LateUpdate()
     {
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
-        transform.LookAt(target);
+        if (isMove)
+        {
+            Vector3 desiredPosition = target.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
+            transform.LookAt(target);
+        }
     }
 
     //private void LateUpdate()
