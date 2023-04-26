@@ -8,6 +8,7 @@ public class HeatCellControl : MonoBehaviour
     MeshRenderer meshRenderer;
     public float WaitForSeconds=100;
     [SerializeField] int state;
+    [SerializeField] GameObject player;
     void Start()
     {
         state = 0;
@@ -43,7 +44,7 @@ public class HeatCellControl : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("Fuck Hot!");
+         //   Debug.Log("Fuck Hot!");
 
             switch (state)
             {
@@ -51,15 +52,17 @@ public class HeatCellControl : MonoBehaviour
                 case 1:
                     HealthSystem.instance.TakeDamage(1);
                     //StartCoroutine(waitForSeconds(1));
-
+                    Debug.Log("Урон нанесен");
                     break;
                 case 2:
                     HealthSystem.instance.TakeDamage(2);
                     // StartCoroutine(waitForSeconds(2));
+                    Debug.Log("Урон нанесен");
                     break;
                 case 3:
                     HealthSystem.instance.TakeDamage(10);
                     //  StartCoroutine(waitForSeconds(4));
+                    Debug.Log("Урон нанесен");
                     break;
 
             }
