@@ -204,8 +204,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1078dcd07629d4eb3c3710d459d034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heat0: {fileID: 2100000, guid: 2fb5c6b115128dd4e8ad7beaa138844d, type: 2}
   heat1: {fileID: 2100000, guid: 90306d823b1f16749ac7642098f0820d, type: 2}
   heat2: {fileID: 2100000, guid: 1b0498da337355d4b93612ca8867f226, type: 2}
   heat3: {fileID: 2100000, guid: 6dec68eb9cb7dd648a78f7b77ba0bea8, type: 2}
-  WaitForSeconds: 2
+  WaitForSeconds: 1
   state: 0

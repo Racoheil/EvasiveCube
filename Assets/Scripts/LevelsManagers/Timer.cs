@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     [SerializeField] Text score;
     public static Timer instance;
     public bool isStop = false;
+   // [SerializeField] GameObject timeBar;
     void Awake()
     {
         instance = this;
@@ -24,7 +25,7 @@ public class Timer : MonoBehaviour
    void Start()
 
     {
-        timerBar = GetComponent<Image>();
+       // timerBar = GetComponent<Image>();
         timeLeft = maxTime;
         StartCoroutine("timerCoroutine");
         

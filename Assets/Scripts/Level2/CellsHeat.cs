@@ -37,4 +37,8 @@ public class CellsHeat : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
     }
+    public void addWaitTime(float value)
+    {
+        waitTime += value;
+    }
 }

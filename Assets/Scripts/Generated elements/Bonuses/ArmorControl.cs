@@ -2,16 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorControl : MonoBehaviour
+public class ArmorControl : Bonus
 {
-   
-    
-    
-    void Start()
-    {
-
-    }
-
+  
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Bomb")
@@ -25,7 +18,7 @@ public class ArmorControl : MonoBehaviour
         {
 
             HealthSystem.instance.activateArmor();
-            Destroy(gameObject);
+            Deactivate();
 
         }
     }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HeatCellControl : MonoBehaviour
 {
-    [SerializeField] Material heat1, heat2, heat3;
+    [SerializeField] Material heat0, heat1, heat2, heat3;
     MeshRenderer meshRenderer;
-    public float WaitForSeconds=100;
+   // public float WaitForSeconds=100;
     [SerializeField] int state;
-    [SerializeField] GameObject player;
+    //[SerializeField] GameObject player;
     void Start()
     {
         state = 0;
@@ -27,12 +27,15 @@ public class HeatCellControl : MonoBehaviour
         yield return new WaitForSeconds(2);
         meshRenderer.material = heat3;
         state = 3;
+        yield return new WaitForSeconds(5);
+        meshRenderer.material = heat0;
+        state = 0;
     }
-    private IEnumerator waitForSeconds(int damage)
-    {
-        HealthSystem.instance.TakeDamage(damage);
-        yield return new WaitForSeconds(WaitForSeconds);
-    }
+    //private IEnumerator waitForSeconds(int damage)
+    //{
+    //    HealthSystem.instance.TakeDamage(damage);
+    //    yield return new WaitForSeconds(WaitForSeconds);
+    //}
  
     public void HeatCell()
     {

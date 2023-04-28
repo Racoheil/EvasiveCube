@@ -9,6 +9,10 @@ public class HealthSystem : MonoBehaviour
     public static HealthSystem instance;
     public bool isArmor = false;
    [SerializeField] GameObject Protection;
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
     void Awake()
     {
         instance = this;
