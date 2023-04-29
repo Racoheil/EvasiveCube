@@ -111,6 +111,11 @@ public class playerMove2 : MonoBehaviour
         rb.freezeRotation = false;
         rb.constraints = RigidbodyConstraints.None;
     }
+    public void playerFly()
+    {
+        //playerFall();
+        rb.AddForce(new Vector3(0,20f,0)*400);
+    }
     IEnumerator playerMove()
     {
         if (isMove)

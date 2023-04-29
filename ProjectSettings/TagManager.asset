@@ -9,6 +9,7 @@ TagManager:
   - Bomb
   - Money
   - KillerBomb
+  - Wall
   layers:
   - Default
   - TransparentFX
