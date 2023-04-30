@@ -40,8 +40,9 @@ public class ButtonsControll : MonoBehaviour
     public void Play()
     {
         Debug.Log("PLAY");
-        if (selectedLevel == 1) SceneManager.LoadScene("Level1");
-        else if (selectedLevel == 2) SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level" + selectedLevel);
+       // if (selectedLevel == 1) SceneManager.LoadScene("Level1");
+        //else if (selectedLevel == 2) SceneManager.LoadScene("Level2");
     }
     public void GoToShop()
     {
@@ -62,18 +63,20 @@ public class ButtonsControll : MonoBehaviour
     }
     public void Next()
     {
-        
-            NumberOfLevel.text = "2";
-            selectedLevel = 2;
+        Debug.Log("Next");
+        selectedLevel += 1;
+        NumberOfLevel.text = selectedLevel.ToString() ;
+            
         
      
     }
     public void Back()
     {
         Debug.Log("Back");
-        NumberOfLevel.text = "1";
+        selectedLevel -= 1;
+        NumberOfLevel.text =selectedLevel.ToString();
        
-        selectedLevel = 1;
+        
     }
     public void NoSound()
     {

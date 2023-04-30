@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level2Manager : MonoBehaviour
+public class Level1Manager : MonoBehaviour
 {
     [SerializeField] float timeStep=5f;
-   
+   [SerializeField] int bombDragStep=3;
     [SerializeField] int playerSpeedStep=3;
     [SerializeField] bool isChange;
-    
+    [SerializeField] float timeSpawnAdd=0.05f;
     
     void Start()
 
     {
+        Timer.instance.setHoldWin(true);
         isChange = true;
         StartCoroutine("changeModeCoroutine");
 
@@ -29,12 +30,16 @@ public class Level2Manager : MonoBehaviour
 
             
             yield return new WaitForSeconds(timeStep);
-            //if(playerMove2.instance.speed<)
             playerMove2.instance.changeSpeed(playerSpeedStep);
-            CellsHeat.instance.addWaitTime(-0.01f);
-            Debug.Log("Mode is changed");
+            BombsGenerate2.instance.reduceBombDrag(bombDragStep);
+            //Debug.Log("Mode is changed");
             Debug.Log("Time is " + Timer.instance.getTime());
-            
+            if (Timer.instance.getTime() > 10)
+            {
+                
+                BombsGenerate2.instance.addTimeBombsSpawn(-timeSpawnAdd);
+                Debug.Log("SpawnTimeChanged on" +BombsGenerate2.instance.getSpawnWait());
+            }
         }
 
 

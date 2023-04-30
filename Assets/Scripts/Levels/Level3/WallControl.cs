@@ -9,6 +9,7 @@ public class WallControl : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Коснулся стены");
+            playerMove2.instance.playerFall();
             playerMove2.instance.playerFly();
         }
     }

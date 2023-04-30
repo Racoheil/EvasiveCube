@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoneyEarn : MonoBehaviour
 {
-    int earnedMoney = 0;
+    //int earnedMoney = 0;
     void TakeMoney()
     {
 

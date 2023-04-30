@@ -13,7 +13,12 @@ public class Timer : MonoBehaviour
     [SerializeField] Text score;
     public static Timer instance;
     public bool isStop = false;
+    bool isHoldWin=false;
    // [SerializeField] GameObject timeBar;
+   public void setHoldWin(bool value)
+    {
+        isHoldWin = value;
+    }
     void Awake()
     {
         instance = this;
@@ -22,7 +27,11 @@ public class Timer : MonoBehaviour
     {
         return time;
     }
-   void Start()
+    public float getMaxTime()
+    {
+        return maxTime;
+    }
+    void Start()
 
     {
        // timerBar = GetComponent<Image>();
@@ -48,7 +57,7 @@ public class Timer : MonoBehaviour
             //   Debug.Log("Time: "+time);
             score.text = time.ToString();
             time++;
-            if (time == maxTime) { LoseWinManager.instance.playerWin(); isStop = true; }
+            if (time == maxTime&&isHoldWin) { LoseWinManager.instance.playerWin(); isStop = true; }
         }
        
        
