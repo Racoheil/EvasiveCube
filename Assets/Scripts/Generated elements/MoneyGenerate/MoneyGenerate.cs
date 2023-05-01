@@ -38,7 +38,7 @@ public class MoneyGenerate : MonoBehaviour
 
         for (int i = 0; i < cells.Length; i++)
         {
-            cellsPositions.Add(cells[i].transform.position);
+            //cellsPositions.Add(cells[i].transform.position);
 
         }
     }
