@@ -5,7 +5,7 @@ using UnityEngine;
 public class PacmsGenerate : MonoBehaviour
 {
     [SerializeField] GameObject startCell;
-    int PacmsCount=9;
+    int PacmsCount=6;
   //  GameObject pacmObject;
     [SerializeField] PacmControl pacmPrefab;
     Vector3 pacmPos;
@@ -27,8 +27,8 @@ public class PacmsGenerate : MonoBehaviour
         {
 
 
-            Debug.Log("Spawn");
-            int spawnWait = UnityEngine.Random.Range(0, 6);
+           // Debug.Log("Spawn");
+            int spawnWait = UnityEngine.Random.Range(0, 15);
             PacmSpawn(i);
             yield return new WaitForSecondsRealtime(spawnWait);
             

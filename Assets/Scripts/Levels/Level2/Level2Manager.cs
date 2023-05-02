@@ -31,7 +31,7 @@ public class Level2Manager : MonoBehaviour
             
             yield return new WaitForSeconds(timeStep);
             //if(playerMove2.instance.speed<)
-            playerMove2.instance.changeSpeed(playerSpeedStep);
+            playerMove2.instance.addSpeed(playerSpeedStep);
             CellsHeat.instance.addWaitTime(-0.01f);
             Debug.Log("Mode is changed");
             Debug.Log("Time is " + Timer.instance.getTime());

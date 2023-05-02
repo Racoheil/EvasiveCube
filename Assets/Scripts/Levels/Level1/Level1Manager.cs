@@ -30,7 +30,7 @@ public class Level1Manager : MonoBehaviour
 
             
             yield return new WaitForSeconds(timeStep);
-            playerMove2.instance.changeSpeed(playerSpeedStep);
+            playerMove2.instance.addSpeed(playerSpeedStep);
             BombsGenerate2.instance.reduceBombDrag(bombDragStep);
             //Debug.Log("Mode is changed");
             Debug.Log("Time is " + Timer.instance.getTime());

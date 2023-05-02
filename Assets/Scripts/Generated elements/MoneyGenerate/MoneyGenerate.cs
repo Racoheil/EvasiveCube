@@ -24,7 +24,8 @@ public class MoneyGenerate : MonoBehaviour
     }
     private void Start()
     {
-        height = cellsPositions[0].y + 0.5f;
+        //height = cellsPositions[0].y + 0.5f;
+        height = cells[0].transform.position.y + 0.5f;
         this.pool = new PoolMono<MoneyControl>(this.moneyPrefab, this.poolCount, this.transform);
          this.pool.autoExpand = this.autoExpand;
         

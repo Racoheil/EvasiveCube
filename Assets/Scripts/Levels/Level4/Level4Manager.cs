@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class Level4Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float timeStep = 10f;
+
+    [SerializeField] int playerSpeedStep = 2;
+    [SerializeField] bool isChange;
+
+
     void Start()
+
     {
-        
+        Timer.instance.setHoldWin(true);
+        isChange = true;
+        StartCoroutine("changeModeCoroutine");
+
+    }
+    public void StopTimer()
+    {
+        StopCoroutine(changeModeCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator changeModeCoroutine()
     {
-        
+        while (isChange)
+        {
+
+
+            yield return new WaitForSeconds(timeStep);
+            //if(playerMove2.instance.speed<)
+            playerMove2.instance.addSpeed(playerSpeedStep);
+           // CellsHeat.instance.addWaitTime(-0.01f);
+            Debug.Log("Mode is changed");
+            Debug.Log("Time is " + Timer.instance.getTime());
+
+        }
+
+
     }
 }

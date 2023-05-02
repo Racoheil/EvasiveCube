@@ -137,8 +137,9 @@ public class playerMove2 : MonoBehaviour
         }
 
     }
-    public void changeSpeed(int value)
+    public void addSpeed(int value)
     {
+        
         speed += value;
     }
 }
