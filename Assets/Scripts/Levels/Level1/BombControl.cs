@@ -33,6 +33,7 @@ public Rigidbody rb;
               
             
                 break;
+            
             default:
                 Deactivate();
                 break;

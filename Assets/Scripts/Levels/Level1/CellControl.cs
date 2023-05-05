@@ -17,10 +17,9 @@ public class CellControl : MonoBehaviour
     public void hitCell( ){
         if (durability<0) {
            
-        // Destroy(gameObject);
+       
             this.gameObject.SetActive(false);
-           // Debug.Log("Cell is destroyed");
-           // BombsGenerate.instance.RemoveCell(this.gameObject.transform.position);
+          
         }
         else if(durability!=0)
         {

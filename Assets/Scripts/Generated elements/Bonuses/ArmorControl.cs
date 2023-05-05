@@ -7,14 +7,9 @@ public class ArmorControl : Bonus
   
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Bomb")
-        {
-            Destroy(gameObject);
-        }
+       
 
-
-
-        else if (collider.tag == "Player")
+        if (collider.tag == "Player")
         {
 
             HealthSystem.instance.activateArmor();

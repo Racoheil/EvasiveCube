@@ -16,14 +16,25 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
         pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+    public void slowDown()
+    {
+        Time.timeScale = 0.5f;
     }
     public void ClosePausePanel()
     {
-        pausePanel.SetActive(false);
+        Resume();
     }
     public void PauseGame()
     {
         pausePanel.SetActive(true);
+        Time.timeScale = 0;
+        
     }
     public void BackToMenu()
     {

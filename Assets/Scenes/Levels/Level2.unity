@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 7b694e3f79d230647937913d60af1ac4
+  m_OcclusionCullingData: {fileID: 36300000, guid: 92d262a2ac73e324099d48da06a40e6c, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -9225,8 +9225,8 @@ GameObject:
   - component: {fileID: 1158354083}
   - component: {fileID: 1158354082}
   - component: {fileID: 1158354081}
-  - component: {fileID: 1158354080}
   - component: {fileID: 1158354079}
+  - component: {fileID: 1158354080}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9281,21 +9281,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1158354077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb88106dd023cd43872547affd9673e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dc8d048297351e4c8a858e9c6f9ddee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 2.584685
-  fromPosition: {x: 0, y: 0, z: 0}
-  toPosition: {x: 1, y: 1, z: 1}
-  speed: 1
-  newX: 0
-  newZ: 0
-  staticY: 0
-  moveValue: {x: 0, y: 0, z: 0}
-  newPosition: {x: 0, y: 0, z: 0}
-  isCorrect: 1
-  isMove: 1
-  isGrounded: 0
 --- !u!54 &1158354081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13455,7 +13443,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &1920595699

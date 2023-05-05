@@ -16,6 +16,7 @@ public class Level1Manager : MonoBehaviour
         Timer.instance.setHoldWin(true);
         isChange = true;
         StartCoroutine("changeModeCoroutine");
+        Application.targetFrameRate = 60;
 
     }
     public void StopTimer()

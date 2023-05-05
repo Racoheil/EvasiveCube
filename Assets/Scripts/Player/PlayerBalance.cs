@@ -8,15 +8,18 @@ public class PlayerBalance : MonoBehaviour
 {
     public static PlayerBalance instance;
     public int balance = 200;
-    public Text balanceText;
-
+    [SerializeField]public Text balanceText;
+    
     private void Start()
     {
+
+
         if (PlayerPrefs.HasKey("balance"))
         {
             balance = PlayerPrefs.GetInt("balance");
         }
         balanceText.text = balance.ToString();
+        TriggerEvents.singleton.moneyTakeEvent += AddMoney;
     }
     private void Awake()
     {
@@ -26,9 +29,9 @@ public class PlayerBalance : MonoBehaviour
     {
         PlayerPrefs.SetInt("balance", money);
     }
-    public void AddMoney(int money)
+    public void AddMoney()
     {
-        balance += money;
+        balance += 1;
         balanceText.text = balance.ToString();
     }
 

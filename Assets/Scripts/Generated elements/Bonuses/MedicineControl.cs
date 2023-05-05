@@ -8,16 +8,12 @@ public class MedicineControl : Bonus
     //float lifeTime =15f;
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Bomb")
-        {
-            //Destroy(gameObject);
-          //  Deactivate();
-        }
-        else if (collider.tag == "Player")
+        
+         if (collider.tag == "Player")
         {
 
             HealthSystem.instance.Heal(healValue);
-            Destroy(gameObject);
+            
             Deactivate();
         }
         

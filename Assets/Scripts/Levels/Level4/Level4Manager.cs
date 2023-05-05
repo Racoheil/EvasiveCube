@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level4Manager : MonoBehaviour
 {
-    [SerializeField] float timeStep = 10f;
+    [SerializeField] float timeStep = 5f;
 
     [SerializeField] int playerSpeedStep = 2;
     [SerializeField] bool isChange;

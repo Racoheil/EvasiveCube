@@ -67,7 +67,7 @@ public class BombsGenerate2 : MonoBehaviour
         {
 
             
-           // Instantiate(bombPrefab, bombPos, Quaternion.identity);
+        
             this.SpawnBomb();
             yield return new WaitForSeconds(spawnWait);
 
@@ -92,11 +92,11 @@ public class BombsGenerate2 : MonoBehaviour
     }
     private void SpawnBomb()
     {
-       // bombPos = cellsPositions[UnityEngine.Random.Range(0, cellsPositions.Count)];
+     
         bombPos = cells[UnityEngine.Random.Range(0, cells.Length)].transform.position;
-      //  bombPos = cellsPositions[];
+     
         bombPos.y = height;
-       // bombPrefab.rb.drag = currentDrag;
+      
         var bomb = this.BombsPool.GetFreeElement();
         bomb.transform.position = bombPos;
         bomb.rb.drag = currentDrag;
@@ -105,7 +105,7 @@ public class BombsGenerate2 : MonoBehaviour
     {
         bombPos = Player.transform.position;
         bombPos.y = height;
-        // bombPrefab.rb.drag = currentDrag;
+       
         var bomb = this.KBombsPool.GetFreeElement();
         bomb.transform.position = bombPos;
         

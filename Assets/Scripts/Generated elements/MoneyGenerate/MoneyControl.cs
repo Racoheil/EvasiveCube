@@ -5,19 +5,19 @@ using UnityEngine;
 public class MoneyControl : MonoBehaviour
 {
    
+    //public delegate void TakeMoneyHandler();
+    //public event TakeMoneyHandler moneyTakeEvent;
   
-    private void OnTriggerEnter(Collider other)
+
+    public void Start()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            PlayerBalance.instance.AddMoney(1);
-            Deactivate();
-        }
+       
     }
 
     public void Deactivate()
     {
-        this.gameObject.SetActive(false);
+       // this.gameObject.SetActive (false);
+        this.gameObject.SetActive (false);
     }
  
 }
