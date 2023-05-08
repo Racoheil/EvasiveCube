@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerBalance : MonoBehaviour
@@ -19,7 +20,8 @@ public class PlayerBalance : MonoBehaviour
             balance = PlayerPrefs.GetInt("balance");
         }
         balanceText.text = balance.ToString();
-        TriggerEvents.singleton.moneyTakeEvent += AddMoney;
+        if(SceneManager.GetActiveScene().name!="MainMenu") TriggerEvents.singleton.moneyTakeEvent += AddMoney;
+
     }
     private void Awake()
     {

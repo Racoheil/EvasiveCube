@@ -9622,7 +9622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4564cdca0341b7845a80da408c3426e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveScript: {fileID: 1158354080}
 --- !u!4 &446732673
 Transform:
   m_ObjectHideFlags: 0
@@ -10091,7 +10090,6 @@ MonoBehaviour:
   - {fileID: 712723161}
   - {fileID: 2000687381}
   spawnWait: 10
-  cellsPositions: []
   autoExpand: 1
 --- !u!1 &447203151
 GameObject:
@@ -23964,18 +23962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb88106dd023cd43872547affd9673e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 2.584685
-  fromPosition: {x: 0, y: 0, z: 0}
-  toPosition: {x: 1, y: 1, z: 1}
-  speed: 1
-  newX: 0
-  newZ: 0
-  staticY: 0
-  moveValue: {x: 0, y: 0, z: 0}
-  newPosition: {x: 0, y: 0, z: 0}
-  isCorrect: 1
-  isMove: 1
-  isGrounded: 0
 --- !u!54 &1158354081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32736,9 +32722,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoseWinManager, Assembly-CSharp
-        m_MethodName: goToMenu
+      - m_Target: {fileID: 446732674}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38930,7 +38916,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 446732677}
         m_TargetAssemblyTypeName: LoseWinManager, Assembly-CSharp
         m_MethodName: restartLevel
         m_Mode: 1

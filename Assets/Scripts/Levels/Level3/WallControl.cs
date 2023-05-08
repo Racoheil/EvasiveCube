@@ -11,6 +11,7 @@ public class WallControl : MonoBehaviour
             Debug.Log("Коснулся стены");
             playerMove2.instance.playerFall();
             playerMove2.instance.playerFly();
+            LoseWinManager.instance.playerLose();
         }
     }
 }

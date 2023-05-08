@@ -71,7 +71,35 @@ public class HeatCellControl : MonoBehaviour
             }
         }
     }
-    
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //   Debug.Log("Fuck Hot!");
+
+            switch (state)
+            {
+                case 0: break;
+                case 1:
+                    HealthSystem.instance.TakeDamage(1);
+                    //StartCoroutine(waitForSeconds(1));
+                    Debug.Log("Урон нанесен");
+                    break;
+                case 2:
+                    HealthSystem.instance.TakeDamage(2);
+                    // StartCoroutine(waitForSeconds(2));
+                    Debug.Log("Урон нанесен");
+                    break;
+                case 3:
+                    HealthSystem.instance.TakeDamage(10);
+                    //  StartCoroutine(waitForSeconds(4));
+                    Debug.Log("Урон нанесен");
+                    break;
+
+            }
+        }
+    }
+
 }
  
 

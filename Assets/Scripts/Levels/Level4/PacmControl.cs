@@ -54,6 +54,7 @@ public class PacmControl : MonoBehaviour
           //  Debug.Log("Player!");
             playerMove2.instance.playerFly();
             playerMove2.instance.playerFall();
+            LoseWinManager.instance.playerLose();
         }
 
     }

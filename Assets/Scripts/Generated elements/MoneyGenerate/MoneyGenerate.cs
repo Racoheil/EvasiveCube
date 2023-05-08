@@ -9,17 +9,16 @@ public class MoneyGenerate : MonoBehaviour
 
     [SerializeField] private int poolCount = 20;
     [SerializeField] GameObject[] cells;
-   // [SerializeField] Vector3 moneyPos;
+
     [SerializeField] float spawnWait = 5f;
-    [SerializeField] public List<Vector3> cellsPositions;
+
     private PoolMono<MoneyControl> pool;
     private bool isGenerateMoney=true;
     [SerializeField] private bool autoExpand = true;
     float height;
     void Awake()
     {
-       
-        fillList();
+     
 
     }
     private void Start()
@@ -27,21 +26,10 @@ public class MoneyGenerate : MonoBehaviour
         //height = cellsPositions[0].y + 0.5f;
         height = cells[0].transform.position.y + 0.5f;
         this.pool = new PoolMono<MoneyControl>(this.moneyPrefab, this.poolCount, this.transform);
-         this.pool.autoExpand = this.autoExpand;
-        
-
-            StartCoroutine(spawnMoneyCoroutine());
+        this.pool.autoExpand = this.autoExpand;
+        StartCoroutine(spawnMoneyCoroutine());
        
 
-    }
-    public void fillList()
-    {
-
-        for (int i = 0; i < cells.Length; i++)
-        {
-            //cellsPositions.Add(cells[i].transform.position);
-
-        }
     }
     IEnumerator spawnMoneyCoroutine()
     {
@@ -69,10 +57,9 @@ public class MoneyGenerate : MonoBehaviour
             
            Vector3 moneyPos = new Vector3(cells[numberOfCell].transform.position.x, 
                height, cells[numberOfCell].transform.position.z);
-          //  moneyPos.y = height;
             var money = this.pool.GetFreeElement();
             money.transform.position = moneyPos;
         }
-        else Debug.Log("ти далбаеб клетка уништожена");
+        else Debug.Log("ти дурашок клетка уништожена");
     }
 }

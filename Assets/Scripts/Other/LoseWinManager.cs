@@ -23,7 +23,7 @@ public class LoseWinManager : MonoBehaviour
     public void playerLose()
     {
         hidePauseButton();
-        playerMove.instance.isMove = false;
+        playerMove2.instance.isMove = false;
         Timer.instance.StopTimer();
         timer.SetActive(false);
         loseObjects.SetActive(true);

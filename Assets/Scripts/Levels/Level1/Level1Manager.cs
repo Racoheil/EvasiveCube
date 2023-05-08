@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1Manager : MonoBehaviour
+public class Level1Manager : ILevelManager
 {
     [SerializeField] float timeStep=5f;
    [SerializeField] int bombDragStep=3;
     [SerializeField] int playerSpeedStep=3;
     [SerializeField] bool isChange;
     [SerializeField] float timeSpawnAdd=0.05f;
-    
+   
     void Start()
 
     {
         Timer.instance.setHoldWin(true);
         isChange = true;
         StartCoroutine("changeModeCoroutine");
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 40;
 
     }
     public void StopTimer()

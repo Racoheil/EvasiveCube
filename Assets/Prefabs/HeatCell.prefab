@@ -208,5 +208,4 @@ MonoBehaviour:
   heat1: {fileID: 2100000, guid: 90306d823b1f16749ac7642098f0820d, type: 2}
   heat2: {fileID: 2100000, guid: 1b0498da337355d4b93612ca8867f226, type: 2}
   heat3: {fileID: 2100000, guid: 6dec68eb9cb7dd648a78f7b77ba0bea8, type: 2}
-  WaitForSeconds: 1
   state: 0

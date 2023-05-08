@@ -8,24 +8,21 @@ using UnityEngine.UI;
 public class ButtonsControll : MonoBehaviour
 {
     public GameObject panel;
-   // public GameObject pausePanel;
-   // public GameObject pauseButton;
     public int selectedLevel=1;
-    
-    //public static bool isUnBlocked = false;
     public static ButtonsControll instance;
     public bool isSound;
     public TMP_Text NumberOfLevel;
-    public GameObject ShopWindow, MainMenuWindow;
-    
-    //public void unBlocked() { isUnBlocked = true; }
-    //public void pauseButtonHide()
-    //{
-    //    pauseButton.SetActive(false);
-    //}
+    public GameObject ShopWindow, MainMenuWindow,SettingsWindow;
+ 
     private void Start()
     {
         
+    }
+    public void restartLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
     public void adOff()
     {
@@ -41,13 +38,10 @@ public class ButtonsControll : MonoBehaviour
     {
         Debug.Log("PLAY");
         SceneManager.LoadScene("Level" + selectedLevel);
-       // if (selectedLevel == 1) SceneManager.LoadScene("Level1");
-        //else if (selectedLevel == 2) SceneManager.LoadScene("Level2");
     }
     public void GoToShop()
     {
         Debug.Log("go to shop");
-        //SceneManager.LoadScene("Shop");
         ShopWindow.gameObject.SetActive(true);
         MainMenuWindow.gameObject.SetActive(false);
 
@@ -59,7 +53,8 @@ public class ButtonsControll : MonoBehaviour
     public void Settings()
     {
         Debug.Log("Settings");
-        SceneManager.LoadScene("Settings");
+        SettingsWindow.gameObject.SetActive(true);
+        MainMenuWindow.gameObject.SetActive(false);
     }
     public void Next()
     {
@@ -101,22 +96,16 @@ public class ButtonsControll : MonoBehaviour
     {
 
         Debug.Log("Back to menu");
-        //    SceneManager.LoadScene("MainMenu");
-       // foreach(GameObject window in )
+     
+
        ShopWindow.gameObject.SetActive(false);
+       SettingsWindow.gameObject.SetActive(false);
         MainMenuWindow.gameObject.SetActive(true);
 
     }
-    //public void Resume()
-    //{
-    //    pausePanel.SetActive(false);
-    //}
-    //public void ClosePausePanel()
-    //{
-    //    pausePanel.SetActive(false); 
-    //}
-    //public void PauseGame()
-    //{
-    //    pausePanel.SetActive(true);
-    //}
+   public void goToNextLvl()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
 }
