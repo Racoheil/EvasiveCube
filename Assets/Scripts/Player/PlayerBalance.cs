@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerBalance : MonoBehaviour
 {
     public static PlayerBalance instance;
-    public int balance = 200;
+    public int balance ;
     [SerializeField]public Text balanceText;
     
     private void Start()
@@ -19,8 +19,9 @@ public class PlayerBalance : MonoBehaviour
         {
             balance = PlayerPrefs.GetInt("balance");
         }
+        else balance = 200;
         balanceText.text = balance.ToString();
-        if(SceneManager.GetActiveScene().name!="MainMenu") TriggerEvents.singleton.moneyTakeEvent += AddMoney;
+        //if(SceneManager.GetActiveScene().name!="MainMenu") TriggerEvents.singleton.moneyTakeEvent += AddMoney;
 
     }
     private void Awake()
@@ -31,10 +32,19 @@ public class PlayerBalance : MonoBehaviour
     {
         PlayerPrefs.SetInt("balance", money);
     }
-    public void AddMoney()
+    public void AddMoney(int money)
     {
-        balance += 1;
+        balance += money;
         balanceText.text = balance.ToString();
     }
+   
+   public void showBalance()
+    {
+        balanceText.gameObject.SetActive(true);
+    }
 
+    internal void SaveBalance()
+    {
+        PlayerPrefs.SetInt("balance", balance);
+    }
 }

@@ -76,10 +76,10 @@ public class SwipeManager : MonoBehaviour
     {
      for(int i=0;i<swipe.Length;i++)
         {
-          //  Debug.Log("Number of direction is "+i);
+        
             if (swipe[i] == true)
             {
-                Debug.Log("Number of direction is" + i); 
+                //Debug.Log("Number of direction is" + i); 
                onSwipeEvent.Invoke(i);
             }
         }

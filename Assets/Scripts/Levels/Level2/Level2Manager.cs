@@ -16,7 +16,7 @@ public class Level2Manager : ILevelManager
         Timer.instance.setHoldWin(true);
         isChange = true;
         StartCoroutine("changeModeCoroutine");
-
+        Application.targetFrameRate = 40;
     }
     public void StopTimer()
     {

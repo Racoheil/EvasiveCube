@@ -51,10 +51,12 @@ public class PacmControl : MonoBehaviour
         }
          if(collider.gameObject.tag == "Player")
         {
-          //  Debug.Log("Player!");
-            playerMove2.instance.playerFly();
-            playerMove2.instance.playerFall();
+              Debug.Log("Player!");
+            //playerMove2.instance.playerFly();
+            //playerMove2.instance.playerFall();
+            collider.gameObject.SetActive(false);
             LoseWinManager.instance.playerLose();
+
         }
 
     }

@@ -13,9 +13,11 @@ public class Level4Manager : MonoBehaviour
     void Start()
 
     {
+        Application.targetFrameRate = 40;
         Timer.instance.setHoldWin(true);
         isChange = true;
         StartCoroutine("changeModeCoroutine");
+
 
     }
     public void StopTimer()

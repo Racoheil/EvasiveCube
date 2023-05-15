@@ -56,7 +56,10 @@ public class playerMove2 : MonoBehaviour
 
         
     }
-
+   public void offMove()
+    {
+        isMove = false;
+    }
   public void playerFall()
     {
         Debug.Log("Пизда мне");

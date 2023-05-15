@@ -28,7 +28,7 @@ public class PacmsGenerate : MonoBehaviour
 
 
            // Debug.Log("Spawn");
-            int spawnWait = UnityEngine.Random.Range(0, 15);
+            int spawnWait = UnityEngine.Random.Range(0, 15)+i;
             PacmSpawn(i);
             yield return new WaitForSecondsRealtime(spawnWait);
             
