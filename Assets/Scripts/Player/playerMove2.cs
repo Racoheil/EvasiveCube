@@ -16,6 +16,41 @@ public class playerMove2 : MonoBehaviour
     {
         instance = this;
     }
+    void Update()
+    {
+        if (/*isGrounded &&*/ isDone && isMove&&Input.GetKeyDown(KeyCode.RightArrow))
+        {
+
+            Move(0);
+
+
+        }
+        if (/*isGrounded &&*/isDone && isMove && Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+
+            Move(1);
+
+        }
+        if (/*isGrounded &&*/ isDone && isMove && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+
+            Move(2);
+        }
+        if (/*isGrounded &&*/isDone && isMove && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+
+            Move(3);
+
+
+        }
+        if (/*isGrounded &&*/ isDone && isMove && Input.GetKeyDown(KeyCode.Space))
+        {
+
+            Move(4);
+
+
+        }
+    }
     private void Start()
     {
    
@@ -100,4 +135,5 @@ public class playerMove2 : MonoBehaviour
         
         speed += value;
     }
+    
 }

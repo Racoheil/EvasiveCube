@@ -11,6 +11,7 @@ TagManager:
   - KillerBomb
   - Wall
   - TurningArea
+  - Knife
   layers:
   - Default
   - TransparentFX

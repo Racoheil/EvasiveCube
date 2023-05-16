@@ -45,7 +45,7 @@ public class HeatCellControl : MonoBehaviour
 
     void OnTriggerStay(Collider collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.CompareTag("Player"))
         {
          //   Debug.Log("Fuck Hot!");
 
@@ -65,10 +65,11 @@ public class HeatCellControl : MonoBehaviour
                 case 3:
                     HealthSystem.instance.TakeDamage(10);
                     //  StartCoroutine(waitForSeconds(4));
-                    Debug.Log("Урон нанесен");
+
                     break;
 
             }
+           
         }
     }
   

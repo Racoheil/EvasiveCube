@@ -9,8 +9,10 @@ public class KnifeControl : MonoBehaviour
     [SerializeField] float smoothSpeed = 0.125f;
         //public Vector3 offset;
        [SerializeField] bool isMove;
+       [SerializeField] bool isCut;
         public static KnifeControl instance;
-        float height = 6f;
+        float height = 8f;
+        float tablePosition = 2.85f;
     [SerializeField] float speed = 10f;
     Vector3 desiredPosition;
         private void Awake()
@@ -26,31 +28,18 @@ public class KnifeControl : MonoBehaviour
         {
         isMove = true;
         StartCoroutine("knifeMoveCoroutine");
+        StartCoroutine(knifeCutCoroutine());
 
         
         }
        
-        //private void LateUpdate()
-        //{
-        //    if (isMove)
-        //    {
-        //       desiredPosition = this.gameObject.transform.position;
-        //       desiredPosition.z = target.position.z;
-        //       Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        //    transform.position = smoothedPosition;
-        //    //  Vector3 desiredPosition.position.y = target.position.y;
-        //    // Vector3 desiredPosition = target.position + offset;
-        //    //Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        //    //transform.position = smoothedPosition;
-        //    //transform.LookAt(target);
-        //    }
-        //}
-
-    void knifeMove()
+    public void addSpeed(float value)
     {
-        transform.Translate(transform.right * speed * Time.deltaTime);
-        //   pacm.transform.Tr
+        smoothSpeed += value;
     }
+
+
+ 
     IEnumerator knifeMoveCoroutine()
     {
 
@@ -66,6 +55,64 @@ public class KnifeControl : MonoBehaviour
 
 
     }
+    IEnumerator knifeCutCoroutine()
+    {
+        while (isCut)
+        {
+            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(7, 10));
+
+          //   StopCoroutine("knifeMoveCoroutine");
+           isMove = false;
+                 StartCoroutine(knifeDownCoroutine());
+               
+
+        }
+     }
+    IEnumerator knifeDownCoroutine()
+    {
+        StopCoroutine(knifeCutCoroutine());
+        while (transform.position.y!= tablePosition)
+        {
+            //isCut = false;
+            desiredPosition = this.gameObject.transform.position;
+            desiredPosition.y = tablePosition;
+            Vector3 smoothedPosition = Vector3.MoveTowards(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
+            yield return new WaitForSeconds(0.001f);
+        }
+        Debug.Log("Дошел до доски");
+        StartCoroutine(knifeUpCoroutine());
+        
+    }
+    IEnumerator knifeUpCoroutine()
+    {
+        //
+      //  StopCoroutine(knifeDownCoroutine());
+        
+        while (transform.position.y!=height)
+        {
+            
+            desiredPosition = this.gameObject.transform.position;
+            desiredPosition.y = height;
+            Vector3 smoothedPosition = Vector3.MoveTowards(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
+            yield return new WaitForSeconds(0.001f);
+        }
+        Debug.Log("Вернулся на орбиту");
+        isMove = true;
+        StartCoroutine("knifeMoveCoroutine");
+        
 
 
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+       
+        if (collider.gameObject.tag == "Player")
+        {
+            Debug.Log("Player!");
+            
+        }
+
+    }
 }
