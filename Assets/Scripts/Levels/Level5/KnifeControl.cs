@@ -14,6 +14,7 @@ public class KnifeControl : MonoBehaviour
         float height = 8f;
         float tablePosition = 2.85f;
     [SerializeField] float speed = 10f;
+    int knifeDamage;
     Vector3 desiredPosition;
         private void Awake()
         {
@@ -26,6 +27,8 @@ public class KnifeControl : MonoBehaviour
         }
         void Start()
         {
+        knifeDamage = HealthSystem.instance.GetMaxHealth()/2;
+        knifeDamage = knifeDamage * 2;
         isMove = true;
         StartCoroutine("knifeMoveCoroutine");
         StartCoroutine(knifeCutCoroutine());
@@ -59,7 +62,7 @@ public class KnifeControl : MonoBehaviour
     {
         while (isCut)
         {
-            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(7, 10));
+            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(10, 17));
 
           //   StopCoroutine("knifeMoveCoroutine");
            isMove = false;
@@ -80,7 +83,7 @@ public class KnifeControl : MonoBehaviour
             transform.position = smoothedPosition;
             yield return new WaitForSeconds(0.001f);
         }
-        Debug.Log("Дошел до доски");
+      //  Debug.Log("Дошел до доски");
         StartCoroutine(knifeUpCoroutine());
         
     }
@@ -89,7 +92,7 @@ public class KnifeControl : MonoBehaviour
         //
       //  StopCoroutine(knifeDownCoroutine());
         
-        while (transform.position.y!=height)
+        while (transform.position.y<height)
         {
             
             desiredPosition = this.gameObject.transform.position;
@@ -98,7 +101,7 @@ public class KnifeControl : MonoBehaviour
             transform.position = smoothedPosition;
             yield return new WaitForSeconds(0.001f);
         }
-        Debug.Log("Вернулся на орбиту");
+       // Debug.Log("Вернулся на орбиту");
         isMove = true;
         StartCoroutine("knifeMoveCoroutine");
         
@@ -110,6 +113,7 @@ public class KnifeControl : MonoBehaviour
        
         if (collider.gameObject.tag == "Player")
         {
+            HealthSystem.instance.TakeDamage(knifeDamage);
             Debug.Log("Player!");
             
         }

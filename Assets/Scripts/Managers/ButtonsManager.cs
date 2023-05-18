@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseManager : MonoBehaviour
+public class ButtonsManager : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject pauseButton;
@@ -36,12 +36,23 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0;
         
     }
-    public void BackToMenu()
+    public void MainMenu()
     {
 
         Debug.Log("Back to menu");
         SceneManager.LoadScene("MainMenu");
 
+
+    }
+    public void goToNextLvl()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+    public void restartLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 }

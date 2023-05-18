@@ -16,41 +16,41 @@ public class playerMove2 : MonoBehaviour
     {
         instance = this;
     }
-    void Update()
-    {
-        if (/*isGrounded &&*/ isDone && isMove&&Input.GetKeyDown(KeyCode.RightArrow))
-        {
+    //void Update()
+    //{
+    //    if (/*isGrounded &&*/ isDone && isMove&&Input.GetKeyDown(KeyCode.RightArrow))
+    //    {
 
-            Move(0);
-
-
-        }
-        if (/*isGrounded &&*/isDone && isMove && Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-
-            Move(1);
-
-        }
-        if (/*isGrounded &&*/ isDone && isMove && Input.GetKeyDown(KeyCode.UpArrow))
-        {
-
-            Move(2);
-        }
-        if (/*isGrounded &&*/isDone && isMove && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-
-            Move(3);
+    //        Move(0);
 
 
-        }
-        if (/*isGrounded &&*/ isDone && isMove && Input.GetKeyDown(KeyCode.Space))
-        {
+    //    }
+    //    if (/*isGrounded &&*/isDone && isMove && Input.GetKeyDown(KeyCode.LeftArrow))
+    //    {
 
-            Move(4);
+    //        Move(1);
+
+    //    }
+    //    if (/*isGrounded &&*/ isDone && isMove && Input.GetKeyDown(KeyCode.UpArrow))
+    //    {
+
+    //        Move(2);
+    //    }
+    //    if (/*isGrounded &&*/isDone && isMove && Input.GetKeyDown(KeyCode.DownArrow))
+    //    {
+
+    //        Move(3);
 
 
-        }
-    }
+    //    }
+    //    if (/*isGrounded &&*/ isDone && isMove && Input.GetKeyDown(KeyCode.Space))
+    //    {
+
+    //        Move(4);
+
+
+    //    }
+    //}
     private void Start()
     {
    
@@ -97,13 +97,14 @@ public class playerMove2 : MonoBehaviour
     }
   public void playerFall()
     {
-        Debug.Log("Пизда мне");
+        Debug.Log("Кирдык мне");
         cameraMovement.instance.stopMove();
         StopAllCoroutines();
         rb.useGravity = true;
         rb.freezeRotation = false;
         rb.constraints = RigidbodyConstraints.None;
     }
+  // public void PlayerUnfree
     public void playerFly()
     {
       

@@ -46,7 +46,7 @@ public class PacmControl : MonoBehaviour
         {
            // Debug.Log("TurninAround");
             speed *= -1;
-
+            transform.Rotate(0, 180, 0);
 
         }
          if(collider.gameObject.tag == "Player")

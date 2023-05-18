@@ -27,6 +27,7 @@ public class LoseWinManager : MonoBehaviour
         if (!gameEnded)
         {
             playerMove2.instance.offMove();
+            //
             StartCoroutine(playerLoseCoroutine());
             gameEnded = true;
         }
@@ -65,6 +66,7 @@ public class LoseWinManager : MonoBehaviour
         timer.SetActive(false);
         loseObjects.SetActive(true);
         savePoints();
+       // playerMove2.instance.playerFall();
 
     }
     void savePoints()

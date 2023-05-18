@@ -10,7 +10,9 @@ public class LossZone : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             Debug.Log("GameOver");
+           // cameraMovement.instance.stopMove();
             LoseWinManager.instance.playerLose();
+            
             //cellControl.hitCell();
 
 

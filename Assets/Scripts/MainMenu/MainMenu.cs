@@ -5,15 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonsControll : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public GameObject panel;
     public int selectedLevel=1;
-    public static ButtonsControll instance;
+    public static MainMenu instance;
     public bool isSound;
     public TMP_Text NumberOfLevel;
     public GameObject ShopWindow, MainMenuWindow,SettingsWindow;
- 
+    private int levelsCount=5;
+
     private void Start()
     {
         
@@ -59,8 +60,12 @@ public class ButtonsControll : MonoBehaviour
     public void Next()
     {
         Debug.Log("Next");
-        selectedLevel += 1;
-        NumberOfLevel.text = selectedLevel.ToString() ;
+        if (selectedLevel != levelsCount)
+        {
+            selectedLevel += 1;
+            NumberOfLevel.text = selectedLevel.ToString();
+        }
+        
             
         
      
@@ -68,9 +73,11 @@ public class ButtonsControll : MonoBehaviour
     public void Back()
     {
         Debug.Log("Back");
-        selectedLevel -= 1;
-        NumberOfLevel.text =selectedLevel.ToString();
-       
+        if (selectedLevel > 1)
+        {
+            selectedLevel -= 1;
+            NumberOfLevel.text = selectedLevel.ToString();
+        }
         
     }
     public void NoSound()
@@ -103,9 +110,5 @@ public class ButtonsControll : MonoBehaviour
         MainMenuWindow.gameObject.SetActive(true);
 
     }
-   public void goToNextLvl()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-    }
+   
 }
